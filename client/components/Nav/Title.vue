@@ -6,7 +6,10 @@ onMounted(() => {
   $gsap.to('.nav-title-text .word span', {
     x: 0,
     duration: .5,
-    stagger: .25,
+    stagger: {
+        each: 0.25,
+        ease: 'power1.in',
+    }
   })
 
   $gsap.to('.nav-title-icon svg', {

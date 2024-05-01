@@ -25,6 +25,6 @@ useHead({ title })
 
 <template>
   <main class="main-site">
-    {{ $t('global.works') }}
+    <SectionsRentChart />
   </main>
 </template>
