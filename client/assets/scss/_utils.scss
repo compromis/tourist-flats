@@ -1,0 +1,37 @@
+.font-headline {
+  font-family: var(--font-headline);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+
+  &.padded {
+    padding: var(--site-padding);
+  }
+
+  &.padded-x {
+    padding: 0 var(--site-padding);
+  }
+
+  &.padded-y {
+    padding: var(--site-padding) 0;
+  }
+}
+
+.focus-orange {
+  --focus-color: var(--orange);
+}
+
+.focus-yellow {
+  --focus-color: var(--yellow);
+}
