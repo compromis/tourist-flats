@@ -1,0 +1,10 @@
+.stripes {
+  background: repeating-linear-gradient(
+      -45deg,
+      var(--green),
+      var(--green) 100px,
+      var(--pine) 100px,
+      var(--pine) 200px
+  );
+  height: var(--stripes-height, 200px);
+}

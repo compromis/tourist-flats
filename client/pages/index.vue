@@ -26,5 +26,7 @@ useHead({ title })
 <template>
   <main class="main-site">
     <SectionsRentChart />
+    <SectionsTabs />
+    <SectionsMap />
   </main>
 </template>
