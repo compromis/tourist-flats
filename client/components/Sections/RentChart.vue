@@ -23,14 +23,14 @@ const chartWidth = computed(() => {
 })
 
 let timeout
-let interval = 1500
+let interval = 1300
 function startAnimation () {
   timeout = setTimeout(() => {
     const totalPoints = data.length
 
     if (currentIndex.value < totalPoints - 1) {
       currentIndex.value++
-      interval -= 125
+      interval -= 110
       startAnimation()
     } else {
       blinking.value = true

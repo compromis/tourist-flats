@@ -34,6 +34,12 @@ export default defineNuxtConfig({
     }
   },
 
+  runtimeConfig: {
+    public: {
+      mapboxApiKey: '',
+    }
+  },
+
   css: ['~/assets/scss/main.scss'],
 
   modules: ["@nuxtjs/i18n"],
