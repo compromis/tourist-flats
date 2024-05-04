@@ -37,12 +37,18 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       mapboxApiKey: '',
+      reportsApiBase: ''
     }
   },
 
   css: ['~/assets/scss/main.scss'],
 
-  modules: ["@nuxtjs/i18n"],
+  modules: ["@nuxtjs/i18n", "@vueuse/nuxt"],
+
+  vue: {
+    defineModel: true,
+    propsDestructure: true
+  },
 
   i18n: {
     defaultLocale: 'val',
