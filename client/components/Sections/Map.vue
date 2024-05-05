@@ -22,10 +22,12 @@ const { open, close } = useModal({
     </div>
     <div class="map-container">
       <ElementsMap />
-      <div class="container padded">
-        <button @click="open">
-          Open Modal
-        </button>
+      <div class="container button-container padded">
+        <SiteBigButton @click="open">
+          <Icon name="lucide:plus" />
+          Afegeix denúncia 
+          <Icon name="fluent-emoji-flat:warning" />
+        </SiteBigButton>
       </div>
     </div>
   </section>
@@ -50,5 +52,14 @@ const { open, close } = useModal({
   &-container {
     padding: var(--site-padding);
   }
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin-top: -6rem;
+  z-index: 100;
+  max-width: 850px;
 }
 </style>

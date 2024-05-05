@@ -4,6 +4,11 @@ defineProps({
 })
 
 const checked = defineModel()
+
+const checkerSentences = {
+  tourist_flat: 'He comprovat que el pis turístic que vull denunciar no es troba al llistat de pisos turístics amb permís',
+  illegal_works: 'He comprovat que la obra il·legal que vull denunciar no compleix amb els requisits exposats.'
+}
 </script>
 
 <template>
@@ -17,16 +22,14 @@ const checked = defineModel()
       </div>
     </div>
   </Transition>
-  <label>
-    <input
-      type="checkbox"
-      name="checked"
-      value="checked"
-      required
-      v-model="checked"
-    />
-    He comprovat que...
-  </label>
+  <FormCheckbox
+    value="true"
+    v-model="checked"
+    name="checked"
+    required
+  >
+    {{ checkerSentences[type] }}
+  </FormCheckbox>
 </template>
 
 <style lang="scss">

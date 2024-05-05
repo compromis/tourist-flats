@@ -22,12 +22,17 @@ const { open, close } = useModal({
     <div class="container padded">
       <ElementsTabs
         :tabs="tabs"
-      />
+      >
+        <template #button>
+          <SiteBigButton @click="open">
+            <Icon name="lucide:arrow-up-right" />
+            Denúncia 
+            <Icon name="fluent-emoji-flat:warning" />
+          </SiteBigButton>
+        </template>
+      </ElementsTabs>
     </div>
     <div class="stripes" />
-    <button @click="open">
-      Open Modal
-    </button>
   </section>
 </template>
 

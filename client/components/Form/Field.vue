@@ -20,7 +20,7 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-  errors: {
+  errorMessages: {
     type: Array,
     default: null
   },
@@ -42,7 +42,7 @@ const modelValue = defineModel()
       </span>
     </label>
     <input
-      v-if="type != 'textarea'"
+      v-if="type !== 'textarea'"
       :type="type"
       :name="name"
       :id="name"
@@ -50,7 +50,8 @@ const modelValue = defineModel()
       :required="required"
       v-bind="$attrs"
       v-model="modelValue"
-      :aria-describedby="help ? `form-help-${name}` : false"
+      :aria-describedby="errorMessages ? `error-${name}` : help ? `form-help-${name}` : false"
+      :aria-invalid="errorMessages ? 'true' : null"
     />
     <textarea
       v-else
@@ -61,11 +62,19 @@ const modelValue = defineModel()
       :required="required"
       v-bind="$attrs"
       v-model="modelValue"
-      :aria-describedby="help ? `form-help-${name}` : false"
+      :aria-describedby="errorMessages ? `error-${name}` : help ? `form-help-${name}` : false"
+      :aria-invalid="errorMessages ? 'true' : null"
     />
     <div v-if="help" class="form-field-help" :id="`form-help-${name}`">
       {{ help }}
     </div>
+    <FormError :id="`error-${name}`" v-if="errorMessages">
+      <ul>
+        <li v-for="(message, e) in errorMessages" :key="e">
+          {{ message }}
+        </li>
+      </ul>
+    </FormError>
   </div>
 </template>
 
@@ -82,6 +91,7 @@ const modelValue = defineModel()
     span {
       margin-inline-start: auto;
       font-weight: 500;
+      font-size: var(--text-sm);
     }
   }
 
@@ -90,16 +100,23 @@ const modelValue = defineModel()
     appearance: none;
     width: 100%;
     border: 2px var(--pine) solid;
-    padding: var(--spacer-3) var(--spacer-4);
+    padding: var(--spacer-2) var(--spacer-4);
     font-size: 1.1rem;
     border-radius: .5rem;
     font-family: inherit;
     color: var(--pine);
     font-weight: 500;
+    line-height: 1;
+
+    &::placeholder {
+      color: rgba($pine, .5);
+    }
   }
 
   textarea {
     height: 6em;
+    padding: var(--spacer-3) var(--spacer-4);
+    line-height: 1.25;
   }
 
   &-help {

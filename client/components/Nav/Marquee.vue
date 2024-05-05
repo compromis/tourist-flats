@@ -9,10 +9,10 @@ onMounted(() => {
     y: 0,
     ease: "power4.out",
     stagger: {
-        each: .5,
+        each: .75,
         ease: 'circ.in',
     },
-    duration: 0.5
+    duration: 0.75
   })
 }, 200)
 })

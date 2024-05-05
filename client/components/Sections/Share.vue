@@ -29,5 +29,9 @@
   .stripes {
     margin-top: -125px;
   }
+
+  .container {
+    max-width: 850px;
+  }
 }
 </style>

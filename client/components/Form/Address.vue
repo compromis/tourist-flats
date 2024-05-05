@@ -6,6 +6,8 @@ const props = defineProps({
   label: { type: String, required: true },
   address: { type: String, required: true },
   coordinates: { type: String, default: null },
+  errorAddress: { type: Boolean, default: false },
+  errorNumber: { type: Boolean, default: false }
 })
 
 const emit = defineEmits(['update:address', 'update:coordinates'])
@@ -35,12 +37,19 @@ function onDragEnd (result) {
   const coordinates = [result.target._lngLat.lng, result.target._lngLat.lat]
   emit('update:coordinates', coordinates.join(','))
 }
+
+onMounted(() => {
+  setTimeout(() => {
+    const addressInput = document.querySelector('.mapboxgl-ctrl-geocoder--input')
+    addressInput.placeholder = 'Escriu el nom del carrer, avinguda, etc.'
+  }, 200)
+})
 </script>
 
 <template>
   <div class="form-address">
     <div class="form-address-label">
-    {{ label }}
+      {{ label }}
     </div>
     <MapboxGeocoder
       :access-token="config.public.mapboxApiKey"s
@@ -50,6 +59,9 @@ function onDragEnd (result) {
       :bbox="config.public.mapBBox"
       @mb-result="setResult"
     />
+    <FormError v-if="errorAddress">
+      Has d'emplenar una adreça
+    </FormError>
     <Transition name="curtain">
       <div v-if="address">
         <MapboxMap
@@ -73,14 +85,21 @@ function onDragEnd (result) {
             label="Número"
             name="street_number"
             v-model="number"
+            placeholder="Número del portal"
+            :aria-invalid="errorNumber ? 'true' : null"
+            :aria-describedby="errorNumber ? 'ErrorNumber' : null"
             required
           />
           <FormField
             label="Porta"
             name="street_box"
+            placeholder="Porta, escala, etc."
             v-model="box"
           />
         </div>
+        <FormError v-if="errorNumber" id="ErrorNumber">
+          Has d'escriure al menys el número del portal
+        </FormError>
       </div>
     </Transition>
   </div>
@@ -102,7 +121,11 @@ function onDragEnd (result) {
     margin-top: var(--spacer-4);
 
     & > * {
-      width: 100%;
+      flex-grow: 1;
+    }
+
+    & + .error {
+      margin-top: var(--spacer-4);
     }
   }
 }
@@ -110,6 +133,7 @@ function onDragEnd (result) {
   width: 100%;
   max-width: unset;
   font-size: 1.1rem;
+  box-shadow: none;
 }
 
 .mapboxgl-ctrl-geocoder--input {
@@ -126,11 +150,19 @@ function onDragEnd (result) {
     outline: 2px var(--orange) solid;
     color: var(--pine);
   }
+
+  &::placeholder {
+    color: rgba($pine, .5);
+  }
 }
 
 .mapboxgl-ctrl-geocoder--icon {
-  top: 13px;
+  top: 14px;
   left: var(--spacer-4);
+
+  path {
+    fill: var(--pine);
+  }
 }
 
 .mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--pin-right > * {

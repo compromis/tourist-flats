@@ -81,6 +81,9 @@ function handleTabKeydown (e) {
         {{ tab.content }}
       </div>
     </div>
+    <div class="tab-cta">
+      <slot name="button" />
+    </div>
   </div>
 </template>
 
@@ -91,6 +94,7 @@ function handleTabKeydown (e) {
     --border-width: 3px;
     max-width: 850px;
     margin: 0 auto;
+    position: relative;
   }
 
   &-buttons {
@@ -162,6 +166,13 @@ function handleTabKeydown (e) {
     padding: var(--spacer-10);
     border-radius: 0 1rem 1rem 1rem;
     border: var(--border-width) var(--pine) solid;
+  }
+
+  &-cta {
+    position: absolute;
+    right: -2rem;
+    bottom: var(--spacer-5);
+    z-index: 100;
   }
 }
 </style>

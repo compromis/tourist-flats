@@ -33,6 +33,7 @@ const value = computed({
           v-model="value"
           class="visually-hidden"
         />
+        <Icon :name="option.icon" class="icon" />
         {{ option.text }}
       </label>
     </div>
@@ -62,6 +63,14 @@ const value = computed({
     font-weight: 900;
     font-size: var(--text-md);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacer-2);
+
+    .icon {
+      font-size: 1.5em;
+    }
 
     &:focus-within {
       outline: 3px var(--orange) solid;

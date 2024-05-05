@@ -44,9 +44,16 @@ export default defineNuxtConfig({
     }
   },
 
-  css: ['~/assets/scss/main.scss', 'vue-final-modal/style.css'],
+  css: [
+    '~/assets/scss/main.scss',
+    'vue-final-modal/style.css'
+  ],
 
-  modules: ["@nuxtjs/i18n", "@vueuse/nuxt"],
+  modules: [
+    '@nuxtjs/i18n',
+    '@vueuse/nuxt',
+    'nuxt-icon'
+  ],
 
   vue: {
     defineModel: true,
