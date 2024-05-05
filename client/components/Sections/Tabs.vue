@@ -1,10 +1,12 @@
 <script setup>
 import { useModal } from 'vue-final-modal'
 
+const { t } = useI18n()
+
 const tabs = [
-  { id: 'problema', label: 'El problema', content: 'Content 1' },
-  { id: 'causes', label: 'Les causes', content: 'Content 2' },
-  { id: 'solucio', label: 'La solucio', content: 'Content 3' },
+  { id: 'problema', label: t('tabs.problem'), content: 'Content 1' },
+  { id: 'causes', label: t('tabs.causes'), content: 'Content 2' },
+  { id: 'solucio', label: t('tabs.solution'), content: 'Content 3' },
 ]
 
 const { open, close } = useModal({
@@ -26,7 +28,7 @@ const { open, close } = useModal({
         <template #button>
           <SiteBigButton @click="open">
             <Icon name="lucide:arrow-up-right" />
-            Denúncia 
+            {{ $t('tabs.cta') }} 
             <Icon name="fluent-emoji-flat:warning" />
           </SiteBigButton>
         </template>

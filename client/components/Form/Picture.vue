@@ -50,17 +50,17 @@ const preview = computed(() => {
     <div class="form-picture-label-wrapper">
       <label :for="name" class="form-picture-label">
         {{ label }}
-        <span>Opcional</span>
+        <span>{{ $t('form.optional') }}</span>
       </label>
       <button
         v-if="modelValue"
         type="button"
         @click="clear"
-        aria-label="Esborra foto"
+        :aria-label="$t('assist.clear_picture')"
         class="clear-button"
       >
         <Icon name="lucide:x" />
-        Esborra
+        {{ $t('form.clear_picture') }}
       </button>
     </div>
     <button
@@ -72,7 +72,7 @@ const preview = computed(() => {
     >
       <div v-if="!modelValue || isOverDropZone" class="form-picture-dropzone-helper">
         <Icon name="lucide:camera" class="icon" />
-        Arroesga una foto o fes clic per seleccionar-la.
+        {{ $t('form.picture_drag') }}
       </div>
       <div v-else class="form-picture-dropzone-helper">
         <img :src="preview" alt="Previsualització" />

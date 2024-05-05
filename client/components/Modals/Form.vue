@@ -17,11 +17,13 @@
       content-transition="content"
     >
       <div class="form-modal-card">
-        <h2 class="visually-hidden">Formulari de denuncia</h2>
+        <h2 class="visually-hidden">
+          {{ $t('form.title') }}
+        </h2>
         <button
           @click="emit('confirm')"
           class="close"
-          aria-label="Tanca"
+          :aria-label="$t('assist.close')"
         >
           <Icon name="lucide:x" />
         </button>

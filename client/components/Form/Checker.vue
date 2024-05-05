@@ -4,11 +4,6 @@ defineProps({
 })
 
 const checked = defineModel()
-
-const checkerSentences = {
-  tourist_flat: 'He comprovat que el pis turístic que vull denunciar no es troba al llistat de pisos turístics amb permís',
-  illegal_works: 'He comprovat que la obra il·legal que vull denunciar no compleix amb els requisits exposats.'
-}
 </script>
 
 <template>
@@ -28,7 +23,7 @@ const checkerSentences = {
     name="checked"
     required
   >
-    {{ checkerSentences[type] }}
+    {{ $t(`form.checker.${type}`) }}
   </FormCheckbox>
 </template>
 

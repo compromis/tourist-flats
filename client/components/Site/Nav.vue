@@ -6,7 +6,7 @@ const { locale, locales } = useI18n()
   <header class="apartment-header">
     <nav class="apartment-nav">
       <a href="https://compromis.net" :aria-label="$t('assist.logo')" class="logo">
-        <NavLogo />
+        <SiteLogo />
         <span class="logo-addon">València</span>
       </a>
       <div class="apartment-languages">

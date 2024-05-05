@@ -38,7 +38,7 @@ const modelValue = defineModel()
     <label :for="name">
       {{ label }}
       <span v-if="!required">
-      Opcional
+        {{ $t('form.optional') }}
       </span>
     </label>
     <input

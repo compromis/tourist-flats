@@ -1,5 +1,6 @@
 <script setup>
 const { $api } = useNuxtApp()
+const { t } = useI18n()
 
 const emit = defineEmits(['close'])
 
@@ -8,8 +9,8 @@ const submitting = ref(false)
 const submitted = ref(false)
 
 const types = [
-  { value: 'tourist_flat', text: 'Pis turistic', icon: 'lucide:bed-double' },
-  { value: 'illegal_works', text: 'Obra il·legal', icon: 'uil:hard-hat' },
+  { value: 'tourist_flat', text: t('form.types.tourist_flat'), icon: 'lucide:bed-double' },
+  { value: 'illegal_works', text: t('form.types.illegal_works'), icon: 'uil:hard-hat' },
 ]
 
 const form = reactive({
@@ -52,6 +53,18 @@ async function submit() {
   }
 }
 
+function reset () {
+  submitted.value = false;
+  form.coordinates = null,
+  form.checked = false,
+  form.address_street = '',
+  form.address_number = '',
+  form.address_box = '',
+  form.consent = false,
+  form.comments = '',
+  form.picture = null
+}
+
 function hasError (field) {
   return errors.value && errors.value.errors.hasOwnProperty(field)
 }
@@ -69,7 +82,7 @@ function errorMessages (field) {
       :class="['report-form', 'form-divider', { submitting }]"
     >
       <FormRadioButtons
-        label="Què vols denunciar?"
+        :label="$t('form.type_label')"
         name="type"
         v-model="form.type"
         :options="types" />
@@ -82,7 +95,7 @@ function errorMessages (field) {
       <Transition name="curtain">
         <div class="form-divider" v-if="form.checked">
           <FormAddress
-            label="Adreça"
+            :label="$t('form.street_name')"
             v-model:coordinates="form.coordinates"
             v-model:address="form.address_street"
             v-model:number="form.address_number"
@@ -90,27 +103,27 @@ function errorMessages (field) {
             :error-address="hasError('address_street')"
           />
           <FormPicture
-            label="Foto"
+            :label="$t('form.picture')"
             name="picture"
             v-model="form.picture"
             :error-messages="errorMessages('picture')"
           />
           <FormField
-            label="Vols deixar algun comentari?"
+            :label="$t('form.comment')"
             name="comemnts"
             type="textarea"
             v-model="form.comments"
-            help="El teu comentari es publicarà en el mapa."
+            :help="$t('form.comment_help')"
           />
-          <h3>Informació de contacte</h3>
+          <h3>{{ $t('form.contact_info') }}</h3>
           <FormField
-            label="Correu electrònic"
+            :label="$t('form.email')"
             name="email"
             type="email"
             v-model="form.email"
             required
-            placeholder="Escriu un e-mail on poder contactar-te"
-            help="La teua denúncia és anònima. Només gastarem el teu e-mail per informar-te de l'estat de la denúncia."
+            :placeholder="$t('form.email_placeholder')"
+            :help="$t('form.email_help')"
             :error-messages="errorMessages('email')"
           />
           <FormCheckbox
@@ -119,25 +132,35 @@ function errorMessages (field) {
             name="consent"
             required
           >
-            He llegit i accepte la <a href="https://compromis.net/avis-legal" target="_blank">politica privacitat</a>. Accepte rebre correus electrònics de <strong>Compromís</strong> amb la finalitat de mantindre'm informa't sobre la meua denúncia.
+            {{ $t('form.privacy.p1') }}
+            <a href="https://compromis.net/avis-legal" target="_blank">{{ $t('global.privacy_policy') }}</a>.
+            {{ $t('form.privacy.p2') }}
+            <strong>Compromís</strong>
+            {{ $t('form.privacy.p3') }}
           </FormCheckbox>
           <FormButton type="submit">
             <IconsLoading v-if="submitting" />
             <Icon name="lucide:file-input" v-else />
-            {{ submitting ? 'Enviant...' : 'Enviar denúncia' }}
+            {{ submitting ? $t('form.submitting') : $t('form.submit') }}
           </FormButton>
         </div>
       </Transition>
     </form>
     <div v-else class="form-submitted">
       <Icon name="lucide:file-check" class="main-icon" />
-      <h3 class="font-headline">Denúncia rebuda</h3>
-      <p>Hem rebut la teua denúncia i la tramitarem el més prompte possible</p>
-      <p>Et mantindrem informa't del l'estat de la teua denúncia mitjançat el correu que ens has indicat.</p>
-      <button class="button" @click="emit('close')">
-        <Icon name="lucide:arrow-down-left" class="icon" />
-        Torna al mapa
-      </button>
+      <h3 class="font-headline">{{ $t('form.submitted.header') }}</h3>
+      <p>{{ $t('form.submitted.p1') }}</p>
+      <p>{{ $t('form.submitted.p2') }}</p>
+      <div class="form-submitted-buttons">
+        <button class="button" @click="emit('close')">
+          <Icon name="lucide:arrow-down-left" class="icon" />
+          {{ $t('form.submitted.button_close') }}
+        </button>
+        <button class="button" @click="reset">
+          <Icon name="lucide:file-plus-2" class="icon" />
+          {{ $t('form.submitted.button_reset') }}
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -173,6 +196,15 @@ function errorMessages (field) {
     p {
       margin: 0;
       font-size: var(--text-base);
+    }
+
+    &-buttons {
+      display: flex;
+      gap: var(--spacer-4);
+
+      & > * {
+        flex-grow: 1;
+      }
     }
 
     .main-icon {

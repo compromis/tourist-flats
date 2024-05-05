@@ -1,8 +1,10 @@
 <script setup>
-const title = 'Que no te tiren - Compromis'
-const description = 'Descripcio'
-const ogImage = '/'
-const keywords = 'alquiler'
+const { t } = useI18n()
+
+const title = t('meta.title')
+const description = t('meta.description')
+const ogImage = t('meta.image')
+const keywords = t('meta.keywords')
 const themeColor = '#148E6C'
 const twitterSite = '@compromis'
 

@@ -6,6 +6,7 @@
 
 <style lang="scss" scoped>
 .big-button {
+  --raise: .25em;
   display: flex;
   background: var(--orange);
   border: 3px var(--pine) solid;
@@ -14,17 +15,18 @@
   padding: .5em .75em;
   border-radius: 10em;
   transition: .25s ease;
-  box-shadow: 0 0 0 0 var(--pine);
+  box-shadow: var(--raise) var(--raise) 0 0 var(--pine);
   align-items: center;
   gap: var(--spacer-2);
 
   &:hover {
-    box-shadow: .25rem .25rem 0 0 var(--pine);
+    --raise: .5em;
+    translate: -.15em -.15em;
   }
 
   &:active {
-    translate: .25rem .25rem;
-    box-shadow: 0 0 0 0 var(--pine);
+    --raise: .25em;
+    translate: 0;
   }
 }
 </style>

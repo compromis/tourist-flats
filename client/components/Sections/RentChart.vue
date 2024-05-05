@@ -50,7 +50,9 @@ onMounted(() => {
     <div class="container padded">
       <div class="card">
         <div class="card-header">
-          <h2 id="RentChartTitle">Preu mitja de l'alquiler a València</h2>
+          <h2 id="RentChartTitle">
+            {{ $t('rent_chart.header') }}
+          </h2>
         </div>
         <div class="card-content">
           <div class="months">

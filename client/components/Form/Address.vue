@@ -38,10 +38,11 @@ function onDragEnd (result) {
   emit('update:coordinates', coordinates.join(','))
 }
 
+const { t } = useI18n()
 onMounted(() => {
   setTimeout(() => {
     const addressInput = document.querySelector('.mapboxgl-ctrl-geocoder--input')
-    addressInput.placeholder = 'Escriu el nom del carrer, avinguda, etc.'
+    addressInput.placeholder = t('form.street_name_placeholder')
   }, 200)
 })
 </script>
@@ -60,7 +61,7 @@ onMounted(() => {
       @mb-result="setResult"
     />
     <FormError v-if="errorAddress">
-      Has d'emplenar una adreça
+      {{ $t('form.errors.address') }}
     </FormError>
     <Transition name="curtain">
       <div v-if="address">
@@ -82,23 +83,23 @@ onMounted(() => {
         </MapboxMap>
         <div class="form-address-details">
           <FormField
-            label="Número"
+            :label="$t('form.street_number')"
             name="street_number"
             v-model="number"
-            placeholder="Número del portal"
+            :placeholder="$t('form.street_number_placeholder')"
             :aria-invalid="errorNumber ? 'true' : null"
             :aria-describedby="errorNumber ? 'ErrorNumber' : null"
             required
           />
           <FormField
-            label="Porta"
+            :label="$t('form.street_box')"
             name="street_box"
-            placeholder="Porta, escala, etc."
+            :placeholder="$t('form.street_box_placeholder')"
             v-model="box"
           />
         </div>
         <FormError v-if="errorNumber" id="ErrorNumber">
-          Has d'escriure al menys el número del portal
+          {{ $t('form.errors.street_number') }}
         </FormError>
       </div>
     </Transition>
