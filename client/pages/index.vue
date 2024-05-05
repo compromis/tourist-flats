@@ -28,5 +28,6 @@ useHead({ title })
     <SectionsRentChart />
     <SectionsTabs />
     <SectionsMap />
+    <SectionsShare />
   </main>
 </template>

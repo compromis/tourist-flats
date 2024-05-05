@@ -16,12 +16,13 @@ return new class extends Migration
             $table->string('coordinates');
             $table->enum('type', ['tourist_flat', 'illegal_works']);
             $table->string('email');
-            $table->string('address_street');
+            $table->string('address');
             $table->string('address_number')->nullable();
             $table->string('address_box')->nullable();
             $table->string('postal_code')->nullable();
             $table->string('picture')->nullable();
             $table->text('comments')->nullable();
+            $table->boolean('confirmed')->default(0);
             $table->timestamps();
         });
     }

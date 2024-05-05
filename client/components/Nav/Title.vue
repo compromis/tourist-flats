@@ -7,15 +7,16 @@ onMounted(() => {
     x: 0,
     duration: .5,
     stagger: {
-        each: 0.25,
-        ease: 'power1.in',
-    }
+      each: 0.25,
+      ease: 'power1.in',
+    },
+    delay: .25
   })
 
   $gsap.to('.nav-title-icon svg', {
     y: 0,
     duration: .5,
-    delay: 1
+    delay: 1.25
   })
 })
 </script>

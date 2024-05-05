@@ -10,24 +10,35 @@ use Illuminate\Support\Facades\Storage;
 
 class ReportController extends Controller
 {
+    public function list()
+    {
+        $reports = Report::select(['id','coordinates','type','address_street'])
+            ->where('confirmed', 1)
+            ->get();
+
+        return $reports;
+    }
+
     public function submit(Request $request)
     {
         $validatedData = $request->validate([
             'type' => ['in:tourist_flat,illegal_works'],
-            'address_street' => 'nullable',
-            'address_number' => 'nullable',
-            'address_box' => 'nullable',
-            'postal_code' => 'nullable',
+            'coordinates' => ['required'],
+            'address_street' => ['required'],
+            'address_number' => ['nullable'],
+            'address_box' => ['nullable'],
             'email' => ['required', 'email'],
-            'comments' => 'nullable',
+            'comments' => ['nullable'],
             'picture' => ['nullable', 'image', 'mimes:jpg,jpeg,png,gif', 'max:8192'],
+            'consent' => ['accepted'],
+            'checked' => ['accepted']
         ]);
 
         $report = new Report;
-        $report->coordinates = '';
+        $report->coordinates = $validatedData['coordinates'];
         $report->type = $validatedData['type'];
         $report->email = $validatedData['email'];
-        $report->address_street = '';
+        $report->address_street = $validatedData['address_street'];
         $report->address_number = '';
         $report->address_box = '';
         $report->postal_code = '';

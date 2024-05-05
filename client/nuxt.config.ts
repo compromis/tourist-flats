@@ -37,11 +37,14 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       mapboxApiKey: '',
-      reportsApiBase: ''
+      reportsApiBase: '',
+      mapBounds: [[-0.51877, 39.28888], [-0.24658, 39.55892]],
+      mapCenter: [-0.37713, 39.47384],
+      mapBBox: [-0.51877, 39.28888, -0.24658, 39.55892]
     }
   },
 
-  css: ['~/assets/scss/main.scss'],
+  css: ['~/assets/scss/main.scss', 'vue-final-modal/style.css'],
 
   modules: ["@nuxtjs/i18n", "@vueuse/nuxt"],
 

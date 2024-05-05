@@ -121,7 +121,7 @@ onMounted(() => {
 
   .months {
     position: relative;
-    font-weight: bold;
+    font-weight: 900;
     font-size: var(--text-md);
     height: 1em;
 
@@ -160,7 +160,7 @@ onMounted(() => {
         width: 5.5em;
         flex-shrink: 0;
         background: var(--pine);
-        font-weight: bold;
+        font-weight: 900;
         padding: .4em;
         border-radius: .5em;
 
