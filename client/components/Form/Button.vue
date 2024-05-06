@@ -10,7 +10,7 @@
   gap: var(--spacer-2);
   align-items: center;
   justify-content: center;
-  appearence: none;
+  appearance: none;
   background: var(--orange);
   padding: .5em;
   border-radius: 10rem;

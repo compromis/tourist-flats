@@ -101,7 +101,7 @@ const { locale, locales } = useI18n()
       font-size: var(--text-5xl);
       line-height: 1;
       gap: .15em;
-      align-items: center;
+      align-items: flex-start;
     }
   }
 }

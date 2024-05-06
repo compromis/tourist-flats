@@ -49,11 +49,11 @@ onMounted(() => {
 
 .nav-title-icon {
   overflow: clip;
-  height: .8em;
+  height: .85em;
   translate: 0 -.02em;
 
   svg {
-    height: .8em;
+    height: .85em;
     transform: translateY(100%);
   }
 }
