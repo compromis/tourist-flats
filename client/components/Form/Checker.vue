@@ -4,6 +4,12 @@ defineProps({
 })
 
 const checked = defineModel()
+
+const checkbox = ref()
+function check() {
+  checked.value = true
+  checkbox.value.$refs.input.focus()
+}
 </script>
 
 <template>
@@ -12,7 +18,8 @@ const checked = defineModel()
       <div class="form-checker-card">
         <div class="stripes" />
         <div class="form-checker-card-content">
-          Comprova...
+          <FormCheckerFlats v-if="type === 'tourist_flat'" />
+          <FormCheckerWorks v-else />
         </div>
       </div>
     </div>
@@ -22,9 +29,15 @@ const checked = defineModel()
     v-model="checked"
     name="checked"
     required
+    ref="checkbox"
   >
     {{ $t(`form.checker.${type}`) }}
   </FormCheckbox>
+  <Transition name="curtain">
+    <FormButton type="button" v-if="!checked" @click="check">
+      {{ $t('form.checker.button') }}
+    </FormButton>
+  </Transition>
 </template>
 
 <style lang="scss">

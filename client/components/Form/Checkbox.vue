@@ -18,6 +18,7 @@ const checked = defineModel()
         v-model="checked"
         :required="required"
         class="visually-hidden"
+        ref="input"
       />
       <div class="control">
         <Icon name="lucide:check" class="check" />

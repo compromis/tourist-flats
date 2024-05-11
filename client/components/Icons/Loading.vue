@@ -1,9 +1,9 @@
 <template>
-  <Icon name="lucide:loader-circle" class="loading" />
+  <Icon name="lucide:loader-circle" class="icon-loading" />
 </template>
 
 <style lang="scss" scoped>
-.loading {
+.icon-loading {
   animation: spin 1s linear infinite;
 }
 

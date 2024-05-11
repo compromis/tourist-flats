@@ -12,7 +12,8 @@ export default {
     image: ''
   },
   global: {
-    privacy_policy: 'Política de privacitat'
+    privacy_policy: 'Política de privacitat',
+    loading: 'Carregant...'
   },
   rent_chart: {
     header: 'Preu mitja de l\'alquiler a València'
@@ -36,7 +37,12 @@ export default {
     picture_drag: 'Arrosega una foto o fes clic per seleccionar-la.',
     checker: {
       tourist_flat: 'He comprovat que el pis turístic que vull denunciar no es troba al llistat de pisos turístics amb permís',
-      illegal_works: 'He comprovat que la obra il·legal que vull denunciar no compleix amb els requisits exposats.'
+      illegal_works: 'He comprovat que la obra il·legal que vull denunciar no compleix amb els requisits exposats.',
+      button: 'Continua',
+      instructions: 'Comprova que el pis que vas a afegir no es troba al llistat de pisos turístics amb permís.',
+      input_label: 'Filtrar per nom de via',
+      input_placeholder: 'Filtra per nom del carrer, avinguda, etc.',
+      address: 'Adreça'
     },
     errors: {
       address: 'Has d\'emplenar una adreça',

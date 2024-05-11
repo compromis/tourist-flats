@@ -11,6 +11,10 @@ class API {
     return this._call('post', 'reports/submit', form)
   }
 
+  legalFlats () {
+    return this._call('get', 'tourist-flats')
+  }
+
   _call (method, path, params) {
     return new Promise((resolve, reject) => {
       axios[method](this.apiBase + '/' + path, params).then((response) => {

@@ -54,6 +54,7 @@ const urls = {
 
     h2 {
       font-size: var(--text-3xl);
+      margin-top: var(--spacer-8);
     }
 
     p {

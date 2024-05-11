@@ -27,6 +27,14 @@ const props = defineProps({
   help: {
     type: String,
     default: ''
+  },
+  noOptionalText: {
+    type: Boolean,
+    default: false
+  },
+  labelVisuallyHidden: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -35,9 +43,9 @@ const modelValue = defineModel()
 
 <template>
   <div class="form-field">
-    <label :for="name">
+    <label :for="name" :class="{ 'visually-hidden': labelVisuallyHidden }">
       {{ label }}
-      <span v-if="!required">
+      <span v-if="!required && !noOptionalText">
         {{ $t('form.optional') }}
       </span>
     </label>
