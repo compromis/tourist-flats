@@ -42,7 +42,8 @@ export default {
       instructions: 'Comprova que el pis que vas a afegir no es troba al llistat de pisos turístics amb permís.',
       input_label: 'Filtrar per nom de via',
       input_placeholder: 'Filtra per nom del carrer, avinguda, etc.',
-      address: 'Adreça'
+      address: 'Adreça',
+      no_results: 'No hem trobat cap pis turístic a eixa adreça. Pots continuar amb la denúncia!'
     },
     errors: {
       address: 'Has d\'emplenar una adreça',

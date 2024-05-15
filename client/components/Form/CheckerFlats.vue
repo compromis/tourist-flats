@@ -29,7 +29,7 @@ const filteredFlats = computed(() => {
       <IconsLoading class="icon" />
       {{ $t('global.loading') }}
     </div>
-    <div v-else class="checker-flats-list">
+    <div v-else-if="filteredFlats.length > 0" class="checker-flats-list">
       <table>
         <thead class="visually-hidden">
           <tr>
@@ -44,6 +44,9 @@ const filteredFlats = computed(() => {
           </tr>
         </tbody>
       </table>
+    </div>
+    <div v-else class="checker-flats-list no-results">
+      {{ $t('form.checker.no_results') }}
     </div>
   </div>
 </template>
@@ -85,13 +88,15 @@ const filteredFlats = computed(() => {
   }
 }
 
-.loading {
+.loading,
+.no-results {
   padding: var(--site-padding);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacer-4);
   font-size: var(--text-md);
+  text-align: center;
 
   .icon {
     height: 1.5em;
