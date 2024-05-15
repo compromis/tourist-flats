@@ -64,4 +64,18 @@ const { open, close } = useModal({
   z-index: 100;
   max-width: 850px;
 }
+
+@include media('<md') {
+  .button-container {
+    margin-top: 0;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+
+    .big-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
 </style>

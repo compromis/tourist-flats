@@ -84,7 +84,9 @@ export default {
   },
   share: {
     header: 'Fes difusió',
-    intro: 'Lorem ipsum'
+    intro: 'Comparteix aquesta pàgina amb les teues amistats per arribar a més gent i poder denunciar tots els pisos i obres il·legals a València Ciutat.',
+    text: 'Text',
+    whatsapp_text: 'Text',
   },
   footer: {
     campaign_by: 'és una campanya de'

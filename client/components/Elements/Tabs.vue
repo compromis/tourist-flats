@@ -50,22 +50,24 @@ function handleTabKeydown (e) {
 <template>
   <div class="tab-group">
     <h2 id="TabsTitle" class="visually-hidden">Tabs</h2>
-    <div role="tablist" aria-labelledby="TabsTitle" class="tab-buttons">
-      <button
-        v-for="tab in tabs"
-        :key="tab.id"
-        :id="`tab-${tab.id}`"
-        type="button"
-        role="tab"
-        class="tab-button"
-        :aria-selected="selectedTab === tab.id ? 'true' : 'false'"
-        :aria-controls="`tab-panel-${tab.id}`"
-        :tabindex="selectedTab === tab.id ? null : '-1'"
-        @click="selectedTab = tab.id"
-        @keydown="handleTabKeydown"
-      >
-        {{ tab.label }}
-      </button>
+    <div class="tab-buttons-wrapper">
+      <div role="tablist" aria-labelledby="TabsTitle" class="tab-buttons">
+        <button
+          v-for="tab in tabs"
+          :key="tab.id"
+          :id="`tab-${tab.id}`"
+          type="button"
+          role="tab"
+          class="tab-button"
+          :aria-selected="selectedTab === tab.id ? 'true' : 'false'"
+          :aria-controls="`tab-panel-${tab.id}`"
+          :tabindex="selectedTab === tab.id ? null : '-1'"
+          @click="selectedTab = tab.id"
+          @keydown="handleTabKeydown"
+        >
+          {{ tab.label }}
+        </button>
+      </div>
     </div>
     <div class="tab-content">
       <div
@@ -78,7 +80,7 @@ function handleTabKeydown (e) {
         class="tab-panel"
         v-show="selectedTab === tab.id"
       >
-        {{ tab.content }}
+        <Component :is="tab.content" />
       </div>
     </div>
     <div class="tab-cta">
@@ -118,6 +120,7 @@ function handleTabKeydown (e) {
     margin-right: -1.25rem;
     z-index: 5;
     transition: padding .5s ease;
+    flex-shrink: 0;
 
     &:hover,
     &:focus-visible {
@@ -163,16 +166,38 @@ function handleTabKeydown (e) {
   &-panel {
     background: var(--white);
     color: var(--pine);
-    padding: var(--spacer-10);
     border-radius: 0 1rem 1rem 1rem;
     border: var(--border-width) var(--pine) solid;
+    padding: var(--spacer-4);
   }
 
   &-cta {
     position: absolute;
-    right: -2rem;
-    bottom: var(--spacer-5);
+    right: 0;
+    top: 2.75rem;
     z-index: 100;
+  }
+}
+
+@include media('<md') {
+  .tab {
+    &-buttons {
+      &-wrapper {
+        padding: 0 var(--site-padding);
+        overflow: auto;
+      }
+    }
+
+    &-panel {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+      padding: 0;
+    }
+
+    &-cta {
+      display: none;
+    }
   }
 }
 </style>

@@ -29,7 +29,7 @@ const { data: markers } = useFetch(config.public.reportsApiBase + '/reports')
 
         <template v-slot:popup>
           <div class="popup">
-            <p>Hello world!</p>
+            <p>{{ marker }}</p>
           </div>
         </template>
       </MapboxMarker>

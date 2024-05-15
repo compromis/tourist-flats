@@ -1,6 +1,7 @@
 <script setup>
-const ctaText = encodeURIComponent('Text')
-const whatsappText = encodeURIComponent('Text')
+const { t } = useI18n()
+const ctaText = encodeURIComponent(t('share.text'))
+const whatsappText = encodeURIComponent(t('share.whatsapp_text'))
 const shareableUrl = encodeURIComponent('https://quenotetiren.com')
 const hashtag = 'QueNoTeTiren'
 
@@ -66,11 +67,29 @@ const urls = {
 
   &-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--site-padding);
   }
 
   .stripes {
     margin-top: -125px;
+  }
+}
+
+@include media('<md') {
+  .share {
+    &-buttons {
+      justify-content: center;
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    .stripes {
+      --stripes-width: 50px;
+      margin-top: -180px;
+    }
   }
 }
 </style>

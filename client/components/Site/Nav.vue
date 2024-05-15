@@ -1,10 +1,17 @@
 <script setup>
 const { locale, locales } = useI18n()
+const scrolled = ref(false)
+
+onMounted(() => {
+  document.addEventListener('scroll', () => {
+    scrolled.value = true
+  })
+})
 </script>
 
 <template>
   <header class="apartment-header">
-    <nav class="apartment-nav">
+    <nav :class="['apartment-nav', { scrolled }]">
       <a href="https://compromis.net" :aria-label="$t('assist.logo')" class="logo">
         <SiteLogo />
         <span class="logo-addon">València</span>
@@ -115,6 +122,10 @@ const { locale, locales } = useI18n()
     &-nav {
       .logo-addon {
         display: none;
+      }
+
+      &.scrolled {
+        background: var(--green);
       }
     }
 

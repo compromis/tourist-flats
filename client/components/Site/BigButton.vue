@@ -1,5 +1,11 @@
+<script setup>
+defineProps({
+  flat: { type: Boolean, default: false }
+})
+</script>
+
 <template>
-  <button class="big-button">
+  <button :class="['big-button', { flat }]">
     <slot />
   </button>
 </template>
@@ -27,6 +33,15 @@
   &:active {
     --raise: .25em;
     translate: 0;
+  }
+
+  &.flat {
+    --raise: 0;
+    
+    &:hover {
+      --raise: .25em;
+      translate: -.15em -.15em;
+    }
   }
 }
 </style>

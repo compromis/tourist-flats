@@ -40,4 +40,14 @@
     }
   }
 }
+
+@include media('<md') {
+  .footer {
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
 </style>
