@@ -100,4 +100,10 @@
     transform: translateY(-200%);
   }
 }
+
+@include media('<md') {
+  .form-modal-card {
+    padding: var(--spacer-4);
+  }
+}
 </style>

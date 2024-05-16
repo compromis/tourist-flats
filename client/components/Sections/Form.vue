@@ -221,4 +221,10 @@ function errorMessages (field) {
       }
     }
   }
+
+  @include media('<md') {
+    .form-divider {
+      gap: var(--card-padding, var(--spacer-4));
+    }
+  }
 </style>

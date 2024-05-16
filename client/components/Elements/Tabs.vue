@@ -185,6 +185,10 @@ function handleTabKeydown (e) {
       &-wrapper {
         padding: 0 var(--site-padding);
         overflow: auto;
+        padding-bottom: var(--border-width);
+        position: relative;
+        top: 3.5px;
+        z-index: 10000;
       }
     }
 

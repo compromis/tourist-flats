@@ -86,4 +86,12 @@ const value = computed({
     }
   }
 }
+
+@include media('<md') {
+  .form-radio-buttons {
+    &-option {
+      padding: var(--spacer-3);
+    }
+  }
+}
 </style>

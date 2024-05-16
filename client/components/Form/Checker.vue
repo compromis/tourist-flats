@@ -59,4 +59,10 @@ function check() {
     border-bottom: 2px var(--pine) solid;
   }
 }
+
+@include media('<md') {
+  .form-checker-card-content {
+    padding: var(--spacer-4);
+  }
+}
 </style>
