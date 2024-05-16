@@ -7,9 +7,9 @@ export default {
   },
   meta: {
     title: 'Que no te tiren - Compromis',
-    description: '',
-    keywords: '',
-    image: ''
+    description: 'Mapa de apartamentos turísticos ilegales en València Ciudad',
+    keywords: 'alquiler, valencia, apartamentos, turisticos, denuncia, mapa',
+    image: 'https://quenotetiren.com/images/og_cas.jpg'
   },
   global: {
     privacy_policy: 'Política de privacidad',
@@ -85,8 +85,8 @@ export default {
   share: {
     header: 'Haz difusión',
     intro: 'Comparte esta página con tus amistades para llegar a más gente y poder denunciar todos los pisos y obras ilegales en Valencia Ciutat.',
-    text: 'Text',
-    whatsapp_text: 'Text',
+    text: 'Mapa de apartamentos turísticos ilegales en València Ciudad',
+    whatsapp_text: 'Mapa de apartamentos turísticos ilegales en València Ciudad www.quenotetiren.com/cas',
   },
   footer: {
     campaign_by: 'es una campaña de'
