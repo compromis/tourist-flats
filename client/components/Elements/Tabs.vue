@@ -188,7 +188,7 @@ function handleTabKeydown (e) {
         padding-bottom: var(--border-width);
         position: relative;
         top: 3.5px;
-        z-index: 10000;
+        z-index: 1000;
       }
     }
 
