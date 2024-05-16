@@ -65,6 +65,6 @@ class ReportController extends Controller
         $jpegThumbnail = $thumbnail->toJpeg(70);
         $filenameParts = explode('.', $filename);
 
-        return Storage::put('/thumbnails/' . $filenameParts[0] . '.jpg', $jpegThumbnail, 'public');
+        return Storage::putFile('/thumbnails/' . $filenameParts[0] . '.jpg', $jpegThumbnail, 'public');
     }
 }

@@ -24,6 +24,9 @@ function setItem(id) {
           @click="setItem(i)"
         >
           <span class="accordion-title">
+            <span v-if="item.number" class="accordion-number">
+              {{ item.number }}
+            </span>
             {{ item.title }}
             <span class="accordion-icon">
               <Icon name="lucide:chevron-down" />
@@ -104,6 +107,20 @@ function setItem(id) {
     padding: 0 var(--spacer-6) var(--spacer-6);
     font-size: var(--text-base);
     line-height: 1.5;
+  }
+
+  &-number {
+    width: 1.75em;
+    height: 1.75em;
+    margin: -.25rem 0;
+    border-radius: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--pine);
+    color: var(--white);
+    font-weight: 900;
   }
 }
 </style>

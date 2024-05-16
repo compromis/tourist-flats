@@ -4,7 +4,11 @@ const scrolled = ref(false)
 
 onMounted(() => {
   document.addEventListener('scroll', () => {
-    scrolled.value = true
+    const chart = document.querySelector('.rent-chart')
+    const scrollY = window.scrollY
+    const threshold = chart?.offsetTop
+    scrolled.value = scrollY > threshold
+    console.log('scroll')
   })
 })
 </script>
@@ -120,6 +124,8 @@ onMounted(() => {
     }
 
     &-nav {
+      transition: background .25s ease;
+
       .logo-addon {
         display: none;
       }

@@ -29,7 +29,15 @@ const { data: markers } = useFetch(config.public.reportsApiBase + '/reports')
 
         <template v-slot:popup>
           <div class="popup">
-            <p>{{ marker }}</p>
+            <div class="popup-address">
+              {{ marker.address_street }}, {{ marker.address_number }} {{ marker.address_box }}
+            </div>
+            <div v-if="marker.picture" class="popup-picture">
+              <img :src="`${config.public.reportsS3Base}pictures/${marker.picture}`" alt="" />
+            </div>
+            <div v-if="marker.comments" class="popup-comments">
+              {{ marker.comments }}
+            </div>
           </div>
         </template>
       </MapboxMarker>
@@ -67,13 +75,28 @@ const { data: markers } = useFetch(config.public.reportsApiBase + '/reports')
 
   .custom-marker {
     padding: 1em;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 5px;
-    color: black;
+    color: var(--black);
   }
 
   .popup {
-    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--black);
+    font-size: 1rem;
+
+    &-address {
+      opacity: .75;
+      font-size: .85rem;
+    }
+
+    &-picture {
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 </style>

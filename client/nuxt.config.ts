@@ -38,6 +38,7 @@ export default defineNuxtConfig({
     public: {
       mapboxApiKey: '',
       reportsApiBase: '',
+      reportsS3Base: '',
       mapBounds: [[-0.51877, 39.28888], [-0.24658, 39.55892]],
       mapCenter: [-0.37713, 39.47384],
       mapBBox: [-0.51877, 39.28888, -0.24658, 39.55892]
