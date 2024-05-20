@@ -31,6 +31,9 @@ export default defineNuxtConfig({
           href: 'https://compromis.net/sub/fonts/manrope.css?variable',
         }
       ],
+      script: [
+        { src: 'https://cloud.umami.is/script.js', defer: true, 'data-website-id': 'e5c0625b-91b6-48d7-b015-28833271172c' },
+      ]
     }
   },
 
