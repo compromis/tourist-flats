@@ -16,8 +16,8 @@
     <ol>
       <li>En la puerta del inmueble en obras no figura permiso municipal de obras.</li>
       <li>Los escombros se cargan en furgonetas particulares y no hay contenedor en la calle.</li>
-      <li>Trabajan juerda del horario permitido (entre las 22:00h y las 8:00h)</li>
-      <li>Las obras invaden zonas comunies del edificio sin haberlo aprobado en Junta de Vecinos.</li>
+      <li>Trabajan fuera del horario permitido (entre las 22:00h y las 8:00h)</li>
+      <li>Las obras invaden zonas comunes del edificio sin haberlo aprobado en Junta de Vecinos.</li>
       <li>Surgen estructuras emergentes sin que haya visible ningún plano de obra.</li>
     </ol>
 
