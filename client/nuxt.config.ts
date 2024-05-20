@@ -53,7 +53,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n',
     '@vueuse/nuxt',
-    'nuxt-icon'
+    'nuxt-icon',
+    'nuxt-cloudflare-analytics'
   ],
 
   vue: {
@@ -83,5 +84,9 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+
+  cloudflareAnalytics: {
+    token: '501bfbf358a14e019ffbfdff1da9e952',
   }
 })
