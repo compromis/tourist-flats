@@ -12,7 +12,7 @@
     <p>Només comunicarem obres en baixos comercials o primeros pisos d’edificis residencials, on es tinga la sospita i proves de que s’estan realitzant de forma irregular, per habilitar-se apartaments turístics.</p>
   </div>
   <div v-else>
-    <h3>Como identificar obras ilegales de apartamentos turísticos</h3>
+    <h3>Cómo identificar obras ilegales de apartamentos turísticos</h3>
     <ol>
       <li>En la puerta del inmueble en obras no figura permiso municipal de obras.</li>
       <li>Los escombros se cargan en furgonetas particulares y no hay contenedor en la calle.</li>
