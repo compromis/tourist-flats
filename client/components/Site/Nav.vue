@@ -8,7 +8,6 @@ onMounted(() => {
     const scrollY = window.scrollY
     const threshold = chart?.offsetTop
     scrolled.value = scrollY > threshold
-    console.log('scroll')
   })
 })
 </script>
