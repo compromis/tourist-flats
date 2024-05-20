@@ -26,19 +26,19 @@ const urls = {
         </p>
       </div>
       <div class="share-buttons">
-        <SiteButton size="lg" :href="urls.whatsapp" target="_blank" focus="black" class="plausible-event-name=clicked_cta plausible-event-social_channel=whatsapp">
+        <SiteButton size="lg" :href="urls.whatsapp" target="_blank" focus="black" data-umami-event="cta_share_whatsapp">
           <Icon name="fa6-brands:whatsapp" />
           WhatsApp
         </SiteButton>
-        <SiteButton size="lg" :href="urls.telegram" target="_blank" focus="black" class="plausible-event-name=clicked_cta plausible-event-social_channel=telegram">
+        <SiteButton size="lg" :href="urls.telegram" target="_blank" focus="black" data-umami-event="cta_share_telegram">
           <Icon name="fa6-brands:telegram" />
           Telegram
         </SiteButton>
-        <SiteButton size="lg" :href="urls.tweet" target="_blank" focus="black" class="plausible-event-name=clicked_cta plausible-event-social_channel=twitter">
+        <SiteButton size="lg" :href="urls.tweet" target="_blank" focus="black" data-umami-event="cta_share_twitter">
           <Icon name="fa6-brands:x-twitter" />
           Tweet
         </SiteButton>
-        <SiteButton size="lg" :href="urls.facebook" target="_blank" focus="black" class="plausible-event-name=clicked_cta plausible-event-social_channel=facebook">
+        <SiteButton size="lg" :href="urls.facebook" target="_blank" focus="black" data-umami-event="cta_share_facebook">
           <Icon name="fa6-brands:facebook" />
           Facebook
         </SiteButton>

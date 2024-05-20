@@ -26,7 +26,7 @@ const { open, close } = useModal({
         :tabs="tabs"
       >
         <template #button>
-          <SiteBigButton @click="open" class="button" flat>
+          <SiteBigButton @click="open" class="button" flat data-umami-event="cta_add_to_map">
             <Icon name="fluent-emoji-flat:warning" />
             {{ $t('tabs.cta') }} 
           </SiteBigButton>

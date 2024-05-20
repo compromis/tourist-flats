@@ -25,7 +25,7 @@ const { open, close } = useModal({
     <div class="map-container">
       <ElementsMap />
       <div class="container button-container padded">
-        <SiteBigButton @click="open">
+        <SiteBigButton @click="open" data-umami-event="cta_add_to_map">
           <Icon name="lucide:plus" />
           {{ $t('map.cta') }}
           <Icon name="fluent-emoji-flat:warning" />
