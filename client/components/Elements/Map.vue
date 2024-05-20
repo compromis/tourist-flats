@@ -30,7 +30,7 @@ const { data: markers } = useFetch(config.public.reportsApiBase + '/reports')
         <template v-slot:popup>
           <div class="popup">
             <div class="popup-address">
-              {{ marker.address_street }}, {{ marker.address_number }} {{ marker.address_box }}
+              {{ marker.address_street }}
             </div>
             <div v-if="marker.picture" class="popup-picture">
               <img :src="`${config.public.reportsS3Base}pictures/${marker.picture}`" alt="" />

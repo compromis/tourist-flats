@@ -73,7 +73,8 @@ export default defineNuxtConfig({
     ],
     lazy: true,
     langDir: 'lang',
-    baseUrl: 'https://quenotetiren.com'
+    baseUrl: 'https://quenotetiren.com',
+    detectBrowserLanguage: false
   },
 
   vite: {
