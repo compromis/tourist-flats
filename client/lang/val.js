@@ -8,7 +8,7 @@ export default {
   meta: {
     title: 'Que no te tiren - Compromis',
     description: 'Mapa d’apartaments turístics il·legals en València Ciutat',
-    keywords: 'alquiler, valencia, apartaments, turistics, denuncia, mapa',
+    keywords: 'alquiler, lloguer, valencia, apartaments, turistics, denuncia, mapa',
     image: 'https://quenotetiren.com/images/og_val.jpg'
   },
   global: {
@@ -16,7 +16,7 @@ export default {
     loading: 'Carregant...'
   },
   rent_chart: {
-    header: 'Preu mitja de l\'alquiler a València'
+    header: 'Preu mitja del lloguer a València'
   },
   tabs: {
     problem: 'El problema',
