@@ -39,8 +39,8 @@ class ReportController extends Controller
         $report->type = $validatedData['type'];
         $report->email = $validatedData['email'];
         $report->address_street = $validatedData['address_street'];
-        $report->address_number = '';
-        $report->address_box = '';
+        $report->address_number = $validatedData['address_number'];
+        $report->address_box = $validatedData['address_box'];
         $report->postal_code = '';
         $report->comments = $validatedData['comments'];
 

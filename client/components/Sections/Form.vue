@@ -40,7 +40,7 @@ async function submit() {
   formData.append('email', form.email)
   formData.append('checked', form.checked)
   formData.append('consent', form.consent)
-  if (form.comments) formData.append('comments', form.comments)
+  formData.append('comments', form.comments)
   if (form.picture) formData.append('picture', form.picture)
   
   try {
