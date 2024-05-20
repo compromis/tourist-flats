@@ -48,7 +48,7 @@ class ReportController extends Controller
             $picture = $request->file('picture');
             $path = $picture->storePublicly('pictures');
             $filename = str_replace('pictures/', '', $path);
-            $this->createThumbnail($picture, $filename);
+            // $this->createThumbnail($picture, $filename);
             $report->picture = $filename;
         }
 

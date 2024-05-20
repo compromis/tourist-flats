@@ -48,6 +48,10 @@ async function submit() {
     submitted.value = true
   } catch(e) {
     errors.value = e
+
+    if(e.message === 'Server Error') {
+      alert('Estem tenint problemes. Torna a intentar-ho després')
+    }
   } finally {
     submitting.value = false
   }
