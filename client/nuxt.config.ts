@@ -57,8 +57,6 @@ export default defineNuxtConfig({
     'nuxt-cloudflare-analytics'
   ],
 
-  extends: ['nuxt-umami'],
-
   vue: {
     defineModel: true,
     propsDestructure: true
@@ -90,12 +88,5 @@ export default defineNuxtConfig({
 
   cloudflareAnalytics: {
     token: '501bfbf358a14e019ffbfdff1da9e952',
-  },
-
-  appConfig: {
-    umami: {
-      host: 'https://cloud.umami.is/',
-      id: 'e5c0625b-91b6-48d7-b015-28833271172c'
-    },
   },
 })
