@@ -16,7 +16,7 @@ export default {
     loading: 'Carregant...'
   },
   rent_chart: {
-    header: 'Preu mitja del lloguer a València'
+    header: 'Preu mitjà del lloguer a València'
   },
   tabs: {
     problem: 'El problema',

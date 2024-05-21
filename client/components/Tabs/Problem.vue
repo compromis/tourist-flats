@@ -34,7 +34,7 @@ const content = {
       text: 'En València, los precios de la vivienda se han disparado en los últimos dos años auspiciados por la especulación urbanística y los apartamentos turísticos, reduciendo la oferta para los/as valencianos/as. La gentrificación y la falta de medidas políticas por parte de los gobiernos de Catalá y Mazón aumentan los desahucios, afectando a jóvenes y familias de ingresos medios y bajos. #QueNoTeTiren'
     },
     {
-      title: 'Expulsión de los Barrios y substitución de vecinos/as por turistas',
+      title: 'Expulsión de los Barrios y sustitución de vecinos/as por turistas',
       icon: '',
       text: 'El hecho de que la mayoría de vivienda disponible se destine al alquilar turístico ha reducido la oferta de los pisos de alquiler de larga duración, provocando un aumento de precios exponencial nunca visto en nuestra ciudad. Actualmente, los precios del alquiler de larga duración en València están al nivel de los de París. Todo esto está provocando la expulsión masiva de vecinos y vecinas de nuestros barrios, que están dejando de ser barrios para convertirse en almacenes de turistas. #QueNoTeTiren'
     },
