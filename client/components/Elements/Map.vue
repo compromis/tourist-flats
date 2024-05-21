@@ -29,15 +29,16 @@ const { data: markers } = useFetch(config.public.reportsApiBase + '/reports')
 
         <template v-slot:popup>
           <div class="popup">
+            <div :class="['popup-type', `type-${marker.type}`]">
+              {{ $t(`form.types.${marker.type}`) }}
+            </div>
             <div class="popup-address">
               {{ marker.address_street }}
             </div>
             <div v-if="marker.picture" class="popup-picture">
               <img :src="`${config.public.reportsS3Base}pictures/${marker.picture}`" alt="" />
             </div>
-            <div v-if="marker.comments" class="popup-comments">
-              {{ marker.comments }}
-            </div>
+            <div v-if="marker.comments" class="popup-comments">{{ marker.comments }}</div>
           </div>
         </template>
       </MapboxMarker>
@@ -97,6 +98,30 @@ const { data: markers } = useFetch(config.public.reportsApiBase + '/reports')
         width: 100%;
       }
     }
+
+    &-comments {
+      white-space: pre-wrap;
+      overflow: hidden;
+    }
+
+    &-type {
+      background: var(--orange);
+      color: var(--white);
+      padding: var(--spacer-1) var(--spacer-2);
+      border-radius: .25rem;
+      font-weight: bold;
+      padding-right: 3rem;
+
+      &.type-illegal_works {
+        background: var(--yellow);
+      color: var(--pine);
+      }
+    }
   }
+}
+
+.mapboxgl-popup-close-button {
+  padding: .8rem 1.2rem;
+  font-size: 1rem;
 }
 </style>
