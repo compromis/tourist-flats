@@ -38,7 +38,6 @@ const { data: markers } = useFetch(config.public.reportsApiBase + '/reports')
             <div v-if="marker.picture" class="popup-picture">
               <img :src="`${config.public.reportsS3Base}pictures/${marker.picture}`" alt="" />
             </div>
-            <div v-if="marker.comments" class="popup-comments">{{ marker.comments }}</div>
           </div>
         </template>
       </MapboxMarker>
