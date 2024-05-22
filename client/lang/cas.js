@@ -62,7 +62,7 @@ export default {
     street_box_placeholder: 'Puerta, escalera, etc.',
     picture: 'Foto',
     comment: '¿Quieres dejar algún comentario?',
-    comment_help: 'Tu comentario se publicará en el mapa.',
+    comment_help: 'Tu comentario se publicará en el mapa. No incluyas datos personales.',
     contact_info: 'Información de contacto',
     email: 'Correo electrónico',
     email_placeholder: 'Escribe un e-mail donde poder contactarte',

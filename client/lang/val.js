@@ -62,7 +62,7 @@ export default {
     street_box_placeholder: 'Porta, escala, etc.',
     picture: 'Foto',
     comment: 'Vols deixar algun comentari?',
-    comment_help: 'El teu comentari es publicarà en el mapa.',
+    comment_help: 'El teu comentari es publicarà en el mapa. No inclogues dades personals!',
     contact_info: 'Informació de contacte',
     email: 'Correu electrònic',
     email_placeholder: 'Escriu un e-mail on poder contactar-te',
