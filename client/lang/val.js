@@ -26,7 +26,7 @@ export default {
   },
   map: {
     header: 'Denunciem il·legalitats',
-    p1: 'Has vist algun pis turístic o obra il·legal? Compromís denunciem per tu, gestionant el registre de la denuncia i guardant el teu anonimat.',
+    p1: 'Has vist algun pis turístic o obra que podria ser il·legal? Compromís denunciem per tu, gestionant el registre de la denuncia i guardant el teu anonimat.',
     p2: 'Et mantindrem informat/da de com avança el procés de denuncia en cada moment per correu electrònic.',
     cta: 'Afegeix denúncia'
   },

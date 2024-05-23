@@ -26,7 +26,7 @@ export default {
   },
   map: {
     header: 'Denunciemos ilegalidades',
-    p1: '¿Has visto algún piso turístico u obra ilegal? Desde Compromís denunciamos por ti, gestionando el registro de la denuncia y guardando tu anonimato.',
+    p1: '¿Has visto algún piso turístico u obra que podría ser ilegal? Desde Compromís denunciamos por ti, gestionando el registro de la denuncia y guardando tu anonimato.',
     p2: 'Te mantendremos informado/a de cómo avanza el proceso de denuncia en cada momento por correo electrónico.',
     cta: 'Añadir denuncia'
   },
