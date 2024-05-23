@@ -35,9 +35,6 @@ const { data: markers } = useFetch(config.public.reportsApiBase + '/reports')
             <div class="popup-address">
               {{ marker.address_street }}
             </div>
-            <div v-if="marker.picture" class="popup-picture">
-              <img :src="`${config.public.reportsS3Base}pictures/${marker.picture}`" alt="" />
-            </div>
           </div>
         </template>
       </MapboxMarker>
