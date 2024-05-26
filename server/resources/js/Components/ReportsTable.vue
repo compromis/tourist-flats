@@ -95,12 +95,13 @@ function coords(coordinates) {
             </a>
         </td>
         <td>
-            <a
-                class="text-orange-500 underline"
-                target="_blank"
-                :href="`https://housing-reports.s3.eu-west-3.amazonaws.com/pictures/${report.picture}`">
-                Foto
-            </a>
+          <a
+            v-if="report.picture"
+            class="text-orange-500 underline"
+            target="_blank"
+            :href="`https://housing-reports.s3.eu-west-3.amazonaws.com/pictures/${report.picture}`">
+            Foto
+          </a>
         </td>
         <td>
           <textarea
