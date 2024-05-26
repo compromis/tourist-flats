@@ -12,8 +12,9 @@ class ReportController extends Controller
 {
     public function list()
     {
-        $reports = Report::select(['id','coordinates','type','address_street','address_number', 'address_box', 'comments', 'picture'])
+        $reports = Report::select(['coordinates','type','address_street'])
             ->where('confirmed', 1)
+            ->groupBy(['coordinates', 'type', 'address_street'])
             ->get();
 
         return $reports;
