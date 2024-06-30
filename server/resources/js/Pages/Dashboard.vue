@@ -11,7 +11,10 @@ defineProps({ reports: Array });
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Denúncies</h2>
+            <div class="flex justify-between">
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">Denúncies</h2>
+                <a href="/admin/reports/export" download class="underline text-orange-500">CSV</a>
+            </div>
         </template>
 
         <div class="p-8">
