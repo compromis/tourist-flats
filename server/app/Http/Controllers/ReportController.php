@@ -22,6 +22,36 @@ class ReportController extends Controller
         return $reports;
     }
 
+    public function geojson(City $city, String $type)
+    {
+        $reports = Report::selectRaw('coordinates, type, address_street, COUNT(id) AS count')
+            ->where('confirmed', 1)
+            ->where('city_id', $city->id)
+            ->where('type', $type)
+            ->groupBy(['coordinates', 'type', 'address_street'])
+            ->get();
+
+        $geojson = [
+            'type' => 'FeatureCollection',
+            'features' => $reports->map(function ($report) {
+                return [
+                    'type' => 'Feature',
+                    'properties' => [
+                        'type' => $report->type,
+                        'address_street' => $report->address_street,
+                        'count' => $report->count
+                    ],
+                    'geometry' => [
+                        'type' => 'Point',
+                        'coordinates' => explode(',', $report->coordinates)
+                    ]
+                ];
+            })
+        ];
+
+        return $geojson;
+    }
+
     public function submit(Request $request)
     {
         $validatedData = $request->validate([
