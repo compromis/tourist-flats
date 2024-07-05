@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Report;
+use App\Models\City;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Illuminate\Support\Facades\Storage;
 
 class ReportController extends Controller
 {
-    public function list()
+    public function list(City $city)
     {
         $reports = Report::select(['coordinates','type','address_street'])
             ->where('confirmed', 1)
+            ->where('city_id', $city->id)
             ->groupBy(['coordinates', 'type', 'address_street'])
             ->get();
 
@@ -23,6 +25,7 @@ class ReportController extends Controller
     public function submit(Request $request)
     {
         $validatedData = $request->validate([
+            'city_id' => ['required'],
             'type' => ['in:tourist_flat,illegal_works'],
             'coordinates' => ['required'],
             'address_street' => ['required'],
@@ -36,6 +39,7 @@ class ReportController extends Controller
         ]);
 
         $report = new Report;
+        $report->city_id = $validatedData['city_id'];
         $report->coordinates = $validatedData['coordinates'];
         $report->type = $validatedData['type'];
         $report->email = $validatedData['email'];

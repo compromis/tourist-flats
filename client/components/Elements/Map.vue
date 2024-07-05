@@ -2,22 +2,32 @@
 import { MapboxMap, MapboxMarker, MapboxNavigationControl } from '@studiometa/vue-mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-const config = useRuntimeConfig()
+const props = defineProps({
+  city: { type: Object, required: true }
+})
 
-const { data: markers } = useFetch(config.public.reportsApiBase + '/reports') 
+const config = useRuntimeConfig()
+const markers = ref([])
+const { data: initialMarkers } = useFetch(config.public.reportsApiBase + '/reports/' + props.city.id) 
+markers.value = initialMarkers.value
+
+watch(() => props.city, async (newCity) => {
+  const newMarkers = await $fetch(config.public.reportsApiBase + '/reports/' + newCity.id)
+  markers.value = newMarkers
+})
 </script>
 
 <template>
   <MapboxMap
     :access-token="config.public.mapboxApiKey"
     mapStyle="mapbox://styles/compromis/clsx099ve009801o34wf72krc"
-    :center="config.public.mapCenter"
+    :center="city.map.mapCenter"
     class="mapbox"
-    :zoom="13"
-    :min-zoom="11"
+    :zoom="10"
+    :min-zoom="7"
     :scroll-zoom="false"
     :language="$i18n.locale === 'val' ? 'ca' : 'es'"
-    :maxBounds="config.public.mapBounds"
+    :maxBounds="city.map.mapBounds"
   >
     <template v-for="marker in markers" :key="marker.id">
       <MapboxMarker

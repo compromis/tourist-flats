@@ -1,6 +1,11 @@
 <script setup>
+const props = defineProps({
+  city: { type: Object, required: true }
+})
+
 const { $api } = useNuxtApp()
 const { t } = useI18n()
+const config = useRuntimeConfig()
 
 const emit = defineEmits(['close'])
 
@@ -8,13 +13,18 @@ const errors = ref(null)
 const submitting = ref(false)
 const submitted = ref(false)
 
+const { data: cities } = await useFetch(config.public.reportsApiBase + '/cities')
 const types = [
   { value: 'tourist_flat', text: t('form.types.tourist_flat'), icon: 'lucide:bed-double' },
   { value: 'illegal_works', text: t('form.types.illegal_works'), icon: 'uil:hard-hat' },
 ]
 
+const selectedCity = ref(props.city)
+watch(selectedCity, (newCity) => form.city_id = newCity.id)
+
 const form = reactive({
   type: 'tourist_flat',
+  city_id: selectedCity.value.id,
   coordinates: null,
   checked: false,
   address_street: '',
@@ -33,6 +43,7 @@ async function submit() {
   submitting.value = true
   let formData = new FormData();
   formData.append('type', form.type)
+  formData.append('city_id', form.city_id)
   formData.append('coordinates', form.coordinates)
   formData.append('address_street', form.address_street)
   formData.append('address_number', form.address_number)
@@ -76,10 +87,19 @@ function hasError (field) {
 function errorMessages (field) {
   return errors.value && errors.value.errors.hasOwnProperty(field) && errors.value.errors[field]
 }
+
+const options = computed(() => cities.value.map(city => ({ id: city.id, label: city.name, value: city })))
 </script>
 
 <template>
   <div class="card">
+    <label for="city_id">Ciutat</label>
+    <FormSelect
+      name="city_id"
+      :options="options"
+      v-model="selectedCity"
+      required
+    />
     <form
       v-if="!submitted"
       @submit.prevent="submit"
@@ -93,12 +113,14 @@ function errorMessages (field) {
 
       <FormChecker
         :type="form.type"
+        :city="selectedCity"
         v-model="form.checked"
        />
 
       <Transition name="curtain">
         <div class="form-divider" v-if="form.checked">
           <FormAddress
+            :city="selectedCity"
             :label="$t('form.street_name')"
             v-model:coordinates="form.coordinates"
             v-model:address="form.address_street"

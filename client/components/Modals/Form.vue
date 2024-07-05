@@ -1,12 +1,12 @@
 <script setup>
-  import { VueFinalModal } from 'vue-final-modal'
+import { VueFinalModal } from 'vue-final-modal'
 
-  defineProps({
-    title: String
-  })
+defineProps({
+  city: { type: Object, required: true }
+})
 
-  const emit = defineEmits(['confirm'])
-  </script>
+const emit = defineEmits(['confirm'])
+</script>
 
   <template>
     <VueFinalModal
@@ -27,7 +27,7 @@
         >
           <Icon name="lucide:x" />
         </button>
-        <SectionsForm @close="emit('confirm')"/>
+        <SectionsForm @close="emit('confirm')" :city="city" />
       </div>
     </VueFinalModal>
   </template>

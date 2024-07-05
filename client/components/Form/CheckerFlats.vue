@@ -1,6 +1,12 @@
 <script setup>
+const props = defineProps({
+  city: { type: Object, required: true }
+})
+
 const { $api } = useNuxtApp()
-const { pending, data: flats } = await useLazyAsyncData('legal-flats', () => $api.legalFlats())
+const { pending, refresh, data: flats } = await useLazyAsyncData('legal-flats', () => $api.legalFlats(props.city.id))
+watch(() => props.city.id, () => refresh())
+
 const streetFilter = ref('')
 const filteredFlats = computed(() => {
   if (!streetFilter.value) return flats.value

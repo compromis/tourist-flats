@@ -11,8 +11,16 @@ class API {
     return this._call('post', 'reports/submit', form)
   }
 
-  legalFlats () {
-    return this._call('get', 'tourist-flats')
+  legalFlats (city) {
+    return this._call('get', 'tourist-flats/' + city)
+  }
+
+  cities () {
+    return this._call('get', 'cities')
+  }
+
+  reports () {
+    return this._call('get', 'reports')
   }
 
   _call (method, path, params) {

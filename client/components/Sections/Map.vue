@@ -1,13 +1,33 @@
 <script setup>
 import { useModal } from 'vue-final-modal'
+const config = useRuntimeConfig()
 
-const { open, close } = useModal({
+const props = defineProps({
+  city: { type: Number, default: 1 }
+})
+
+const { data: cities } = await useFetch(config.public.reportsApiBase + '/cities')
+const defaultCity = computed(() => {
+  return cities.value.filter(city => city.id === props.city)[0]
+})
+const currentCity = ref(defaultCity.value)
+
+const { open, close, patchOptions } = useModal({
   component: resolveComponent('ModalsForm'),
   attrs: {
+    city: currentCity.value,
     onConfirm() {
       close()
     },
   },
+})
+
+watch(currentCity, (newCity) => {
+  patchOptions({
+    attrs: {
+      city: newCity
+    }
+  })
 })
 </script>
 
@@ -21,9 +41,18 @@ const { open, close } = useModal({
         <p>{{ $t('map.p1') }}</p>
         <p>{{ $t('map.p2') }}</p>
       </div>
+      <div class="map-cities">
+        <ul>
+          <li v-for="city in cities" :key="city.id">
+            <a :href="`/${city.slug}`" @click.prevent="currentCity = city">
+              {{ city.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="map-container">
-      <ElementsMap />
+    <div class="map-container" v-if="currentCity">
+      <ElementsMap :city="currentCity" />
       <div class="container button-container padded">
         <SiteBigButton @click="open" data-umami-event="cta_add_to_map">
           <Icon name="lucide:plus" />

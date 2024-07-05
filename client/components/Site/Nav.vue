@@ -17,7 +17,6 @@ onMounted(() => {
     <nav :class="['apartment-nav', { scrolled }]">
       <a href="https://compromis.net" :aria-label="$t('assist.logo')" class="logo">
         <SiteLogo />
-        <span class="logo-addon">València</span>
       </a>
       <div class="apartment-languages">
         <template v-for="lang in locales" :key="lang.code">
