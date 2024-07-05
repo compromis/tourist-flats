@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Report;
 use Inertia\Inertia;
+use Auth;
 
 class AdminController extends Controller
 {
     public function dashboard()
     {
-        $reports = Report::all();
+        $reports = Report::where('city_id', Auth::user()->city_id)->get();
         return Inertia::render('Dashboard', [
             'reports' => $reports
         ]);
@@ -36,7 +37,7 @@ class AdminController extends Controller
             'Pragma'              => 'public'
         ];
 
-        $reports = Report::all();
+        $reports = Report::where('city_id', Auth::user()->city_id)->get();
 
         return response()->stream(function () {
             $handle = fopen('php://output', 'w');
