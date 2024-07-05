@@ -29,6 +29,10 @@ watch(currentCity, (newCity) => {
     }
   })
 })
+
+function setCurrentCity (city) {
+  currentCity.value = city
+}
 </script>
 
 <template>
@@ -40,15 +44,21 @@ watch(currentCity, (newCity) => {
         </h2>
         <p>{{ $t('map.p1') }}</p>
         <p>{{ $t('map.p2') }}</p>
-      </div>
-      <div class="map-cities">
-        <ul>
-          <li v-for="city in cities" :key="city.id">
-            <a :href="`/${city.slug}`" @click.prevent="currentCity = city">
-              {{ city.name }}
-            </a>
-          </li>
-        </ul>
+
+        <div class="map-cities">
+          <ul class="list-reset" aria-label="Ciutat">
+            <li v-for="city in cities" :key="city.id">
+              <a
+                :href="`/${city.slug}`"
+                @click.prevent="setCurrentCity(city)"
+                :class="{ active: currentCity.id === city.id }"
+                :aria-pressed="currentCity.id === city.id ? 'true' : 'false'"
+              >
+                {{ city.name }}
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="map-container" v-if="currentCity">
@@ -82,6 +92,35 @@ watch(currentCity, (newCity) => {
 
   &-container {
     padding: var(--site-padding);
+  }
+
+  &-cities {
+    margin-top: var(--spacer-8);
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: .5em;
+    }
+
+    a {
+      border: 3px var(--pine) solid;
+      font-size: var(--text-md);
+      border-radius: 4em;
+      padding: .25em .75em;
+      text-decoration: none;
+      background: var(--pine);
+      color: var(--white);
+
+      &.active {
+        background: var(--orange);
+      }
+
+      &:hover:not(.active) {
+        background: var(--yellow);
+        color: var(--pine);
+      }
+    }
   }
 }
 

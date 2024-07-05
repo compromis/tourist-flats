@@ -93,13 +93,6 @@ const options = computed(() => cities.value.map(city => ({ id: city.id, label: c
 
 <template>
   <div class="card">
-    <label for="city_id">Ciutat</label>
-    <FormSelect
-      name="city_id"
-      :options="options"
-      v-model="selectedCity"
-      required
-    />
     <form
       v-if="!submitted"
       @submit.prevent="submit"
@@ -110,6 +103,13 @@ const options = computed(() => cities.value.map(city => ({ id: city.id, label: c
         name="type"
         v-model="form.type"
         :options="types" />
+
+      <FormSelect
+        name="city_id"
+        :label="$t('form.city')"
+        :options="options"
+        v-model="selectedCity"
+        required />
 
       <FormChecker
         :type="form.type"

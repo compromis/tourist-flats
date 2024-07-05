@@ -29,7 +29,7 @@ useHead({ title })
   <main class="main-site">
     <SectionsRentChart />
     <SectionsTabs />
-    <SectionsMap :city="1" />
+    <SectionsMap />
     <SectionsShare />
   </main>
 </template>

@@ -16,7 +16,7 @@ export default {
     loading: 'Cargando...'
   },
   rent_chart: {
-    header: 'Precio medio alquiler en València'
+    header: 'Precio medio alquiler'
   },
   tabs: {
     problem: 'El problema',
@@ -32,6 +32,7 @@ export default {
   },
   form: {
     title: 'Formulario de denuncia',
+    city: '¿En qué ciudad?',
     optional: 'Opcional',
     clear_picture: 'Borrar',
     picture_drag: 'Arrastra una foto o haz click para seleccionarla.',

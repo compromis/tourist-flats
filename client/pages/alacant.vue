@@ -28,7 +28,7 @@ useHead({ title })
 <template>
   <main class="main-site">
     <SectionsRentChart />
-    <SectionsTabs />
+    <SectionsTabs :city="2" />
     <SectionsMap :city="2" />
     <SectionsShare />
   </main>

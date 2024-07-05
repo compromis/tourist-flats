@@ -1,7 +1,16 @@
 <script setup>
 import { useModal } from 'vue-final-modal'
-
+const config = useRuntimeConfig()
 const { t } = useI18n()
+
+const props = defineProps({
+  city: { type: Number, default: 1 }
+})
+
+const { data: cities } = await useFetch(config.public.reportsApiBase + '/cities')
+const defaultCity = computed(() => {
+  return cities.value.filter(city => city.id === props.city)[0]
+})
 
 const tabs = [
   { id: 'problema', label: t('tabs.problem'), content: resolveComponent('TabsProblem') },
@@ -12,6 +21,7 @@ const tabs = [
 const { open, close } = useModal({
   component: resolveComponent('ModalsForm'),
   attrs: {
+    city: defaultCity.value,
     onConfirm() {
       close()
     },

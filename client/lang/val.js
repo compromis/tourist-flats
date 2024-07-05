@@ -16,7 +16,7 @@ export default {
     loading: 'Carregant...'
   },
   rent_chart: {
-    header: 'Preu mitjà del lloguer a València'
+    header: 'Preu mitjà del lloguer'
   },
   tabs: {
     problem: 'El problema',
@@ -32,6 +32,7 @@ export default {
   },
   form: {
     title: 'Formulari de denúncia',
+    city: 'En quina ciutat?',
     optional: 'Opcional',
     clear_picture: 'Esborra',
     picture_drag: 'Arrosega una foto o fes clic per seleccionar-la.',
