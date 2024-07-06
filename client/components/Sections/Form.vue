@@ -1,8 +1,4 @@
 <script setup>
-const props = defineProps({
-  city: { type: Object, required: true }
-})
-
 const { $api } = useNuxtApp()
 const { t } = useI18n()
 const config = useRuntimeConfig()
@@ -13,18 +9,16 @@ const errors = ref(null)
 const submitting = ref(false)
 const submitted = ref(false)
 
-const { data: cities } = await useFetch(config.public.reportsApiBase + '/cities')
+const cities = useState('cities')
+const city = useState('city')
 const types = [
   { value: 'tourist_flat', text: t('form.types.tourist_flat'), icon: 'lucide:bed-double' },
   { value: 'illegal_works', text: t('form.types.illegal_works'), icon: 'uil:hard-hat' },
 ]
 
-const selectedCity = ref(props.city)
-watch(selectedCity, (newCity) => form.city_id = newCity.id)
-
 const form = reactive({
   type: 'tourist_flat',
-  city_id: selectedCity.value.id,
+  city_id: city.value.id,
   coordinates: null,
   checked: false,
   address_street: '',
@@ -37,6 +31,7 @@ const form = reactive({
 })
 
 watch(() => form.type, () => form.checked = false)
+watch(city, (newCity) => form.city_id = newCity.id)
 
 async function submit() {
   if (submitting.value) return
@@ -105,22 +100,21 @@ const options = computed(() => cities.value.map(city => ({ id: city.id, label: c
         :options="types" />
 
       <FormSelect
+        v-if="config.public.multicity"
         name="city_id"
         :label="$t('form.city')"
         :options="options"
-        v-model="selectedCity"
+        v-model="city"
         required />
 
       <FormChecker
         :type="form.type"
-        :city="selectedCity"
         v-model="form.checked"
        />
 
       <Transition name="curtain">
         <div class="form-divider" v-if="form.checked">
           <FormAddress
-            :city="selectedCity"
             :label="$t('form.street_name')"
             v-model:coordinates="form.coordinates"
             v-model:address="form.address_street"

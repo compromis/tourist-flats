@@ -1,16 +1,9 @@
 <script setup>
 import { useModal } from 'vue-final-modal'
 const config = useRuntimeConfig()
-
-const props = defineProps({
-  city: { type: Number, default: 1 }
-})
-
-const { data: cities } = await useFetch(config.public.reportsApiBase + '/cities')
-const defaultCity = computed(() => {
-  return cities.value.filter(city => city.id === props.city)[0]
-})
-const currentCity = ref(defaultCity.value)
+const { locale } = useI18n()
+const cities = useState('cities')
+const currentCity = useState('city')
 
 const { open, close, patchOptions } = useModal({
   component: resolveComponent('ModalsForm'),
@@ -32,6 +25,8 @@ watch(currentCity, (newCity) => {
 
 function setCurrentCity (city) {
   currentCity.value = city
+  const pre = locale.value === 'cas' ? '/cas/' : '/'
+  window.history.replaceState({}, '', `${pre}${city.slug}`)
 }
 </script>
 
@@ -45,7 +40,7 @@ function setCurrentCity (city) {
         <p>{{ $t('map.p1') }}</p>
         <p>{{ $t('map.p2') }}</p>
 
-        <div class="map-cities">
+        <div v-if="config.public.multicity" class="map-cities">
           <ul class="list-reset" aria-label="Ciutat">
             <li v-for="city in cities" :key="city.id">
               <a
@@ -61,8 +56,8 @@ function setCurrentCity (city) {
         </div>
       </div>
     </div>
-    <div class="map-container" v-if="currentCity">
-      <ElementsMap :city="currentCity" />
+    <div class="map-container">
+      <ElementsMap />
       <div class="container button-container padded">
         <SiteBigButton @click="open" data-umami-event="cta_add_to_map">
           <Icon name="lucide:plus" />

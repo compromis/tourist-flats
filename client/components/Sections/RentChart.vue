@@ -1,4 +1,6 @@
 <script setup>
+const city = useState('city')
+
 const data = [
   { month: 'Jun 2023', number: 800, currency: '800€' },
   { month: 'Jul 2023', number: 850, currency: '850€' },
@@ -51,7 +53,7 @@ onMounted(() => {
       <div class="card">
         <div class="card-header">
           <h2 id="RentChartTitle">
-            {{ $t('rent_chart.header') }}
+            {{ $t('rent_chart.header', { city: city.name }) }}
           </h2>
         </div>
         <div class="card-content">

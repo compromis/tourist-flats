@@ -3,7 +3,6 @@ import { MapboxMap, MapboxMarker, MapboxGeocoder, MapboxNavigationControl } from
 import '@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css'
 
 const props = defineProps({
-  city: { type: Object, required: true },
   label: { type: String, required: true },
   address: { type: String, required: true },
   coordinates: { type: String, default: null },
@@ -14,7 +13,8 @@ const props = defineProps({
 const emit = defineEmits(['update:address', 'update:coordinates'])
 
 const config = useRuntimeConfig()
-const mapCenter = ref(props.city.map.mapCenter)
+const city = useState('city')
+const mapCenter = ref(city.value.map.mapCenter)
 
 const value = computed({
   get () {
@@ -58,7 +58,7 @@ onMounted(() => {
       types="address"
       countries="ES"
       language="ca,es"
-      :bbox="props.city.map.mapBBox"
+      :bbox="city.map.mapBBox"
       @mb-result="setResult"
     />
     <FormError v-if="errorAddress">
@@ -73,7 +73,7 @@ onMounted(() => {
           :min-zoom="9"
           :center="mapCenter"
           :zoom="15"
-          :maxBounds="props.city.map.mapBounds"
+          :maxBounds="city.map.mapBounds"
         >
           <MapboxMarker
             draggable

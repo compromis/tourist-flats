@@ -2,12 +2,8 @@
 import { MapboxMap, MapboxCluster, MapboxPopup, MapboxImage, MapboxNavigationControl } from '@studiometa/vue-mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-const props = defineProps({
-  city: { type: Object, required: true }
-})
-
 const config = useRuntimeConfig()
-
+const city = useState('city')
 const isOpen = ref(false)
 const position = ref([0, 0])
 const content = ref()
@@ -16,11 +12,6 @@ async function openPopup({ geometry, properties }) {
   await nextTick()
   position.value = [...geometry.coordinates]
   isOpen.value = true
-
-  /**
-   * Mapbox GL convert's properties values to JSON, so we need to parse them
-   * to retreive any complex data structure such as arrays and objects.
-   */
   content.value = Object.fromEntries(
     Object.entries(properties).map(([key, value]) => {
       try {
@@ -75,12 +66,14 @@ async function openPopup({ geometry, properties }) {
           'icon-size': .65,
         }"
         :unclustered-point-paint="null"
-        :clustersPaint="{
+        :cluster-count-paint="{
+          'text-color': '#005c43',
+        }"
+        :clusters-paint="{
           'circle-color': '#ffce07',
           'circle-radius': 40,
           'circle-stroke-color': '#005c43',
           'circle-stroke-width': 3,
-          'text-color': '#005c43'
         }"
       />
     </MapboxImage>
@@ -96,13 +89,14 @@ async function openPopup({ geometry, properties }) {
           'icon-size': .65,
         }"
         :unclustered-point-paint="null"
-        :clusterMinPoints="4"
-        :clustersPaint="{
+        :clusters-paint="{
           'circle-color': '#f26728',
           'circle-radius': 40,
           'circle-stroke-color': '#005c43',
           'circle-stroke-width': 3,
-          'text-color': '#005c43'
+        }"
+        :cluster-count-paint="{
+          'text-color': '#fff',
         }"
       />
     </MapboxImage>
@@ -112,7 +106,7 @@ async function openPopup({ geometry, properties }) {
 
 <style lang="scss">
 .mapbox {
-  height: 75vh;
+  height: calc(100vh - 80px);
   min-height: 400px;
   border-radius: 1rem;
 

@@ -1,7 +1,6 @@
 <script setup>
 defineProps({
   type: { type: String, default: 'tourist_flat' },
-  city: { type: Object, required: true }
 })
 
 const checked = defineModel()
@@ -19,7 +18,7 @@ function check() {
       <div class="form-checker-card">
         <div class="stripes" />
         <div class="form-checker-card-content">
-          <FormCheckerFlats :city="city" v-if="type === 'tourist_flat'" />
+          <FormCheckerFlats v-if="type === 'tourist_flat'" />
           <FormCheckerWorks v-else />
         </div>
       </div>

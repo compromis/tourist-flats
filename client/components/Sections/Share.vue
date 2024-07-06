@@ -1,16 +1,17 @@
 <script setup>
+const city = useState('city')
 const { t } = useI18n()
-const ctaText = encodeURIComponent(t('share.text'))
-const whatsappText = encodeURIComponent(t('share.whatsapp_text'))
-const shareableUrl = encodeURIComponent('https://quenotetiren.com')
+const ctaText = ref(encodeURIComponent(t('share.text', { city: city.value.name })))
+const whatsappText = ref(encodeURIComponent(t('share.whatsapp_text', { city: city.value.name, slug: city.value.slug })))
+const shareableUrl = ref(encodeURIComponent(t('share.url', { slug: city.value.slug })))
 const hashtag = 'QueNoTeTiren'
 
-const urls = {
-  whatsapp: `https://api.whatsapp.com/send/?text=${whatsappText}`,
-  telegram: `https://t.me/share/url?url=${shareableUrl}&text=${ctaText}`,
-  tweet: `https://twitter.com/intent/tweet/?text=${ctaText}&url=${shareableUrl}&hashtags=${hashtag}`,
-  facebook: `https://www.facebook.com/sharer/sharer.php?u=${shareableUrl}`,
-}
+const urls = computed(() => ({
+  whatsapp: `https://api.whatsapp.com/send/?text=${whatsappText.value}`,
+  telegram: `https://t.me/share/url?url=${shareableUrl.value}&text=${ctaText.value}`,
+  tweet: `https://twitter.com/intent/tweet/?text=${ctaText.value}&url=${shareableUrl.value}&hashtags=${hashtag}`,
+  facebook: `https://www.facebook.com/sharer/sharer.php?u=${shareableUrl.value}`,
+}))
 </script>
 
 <template>
@@ -22,7 +23,7 @@ const urls = {
           {{ $t('share.header') }}
         </h2>
         <p>
-          {{ $t('share.intro') }}
+          {{ $t('share.intro', { city: city.name }) }}
         </p>
       </div>
       <div class="share-buttons">

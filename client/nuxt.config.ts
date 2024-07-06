@@ -42,6 +42,7 @@ export default defineNuxtConfig({
       mapboxApiKey: '',
       reportsApiBase: '',
       reportsS3Base: '',
+      multicity: false
     }
   },
 
