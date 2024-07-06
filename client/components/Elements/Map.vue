@@ -186,4 +186,10 @@ async function openPopup({ geometry, properties }) {
   padding: .8rem 1.2rem;
   font-size: 1rem;
 }
+
+@include media('<md') {
+  .mapbox {
+    height: calc(75vh - 80px);
+  }
+}
 </style>
