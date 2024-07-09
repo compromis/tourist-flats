@@ -2,7 +2,7 @@
 const content = {
   val: [
     {
-      title: 'Augment del preu vivenda a València',
+      title: 'Augment del preu vivenda',
       icon: 'lucide:line-chart',
       text: 'A València, els preus de la vivenda s’han disparat en els últims dos anys afavorits per l’especulació urbanística i els apartaments turístics, reduint l’oferta per als valencians/nes.  La gentrificació i la manca de mesures polítiques per part dels governs de Catalá i  Mazón augmenten els desnonaments, afectant a joves i famílies d’ingressos mitjans i baixos. #QueNoTeTire'
     },
@@ -29,7 +29,7 @@ const content = {
   ],
   cas: [
     {
-      title: 'Aumento del precio de la vivienda en València',
+      title: 'Aumento del precio de la vivienda',
       icon: '',
       text: 'En València, los precios de la vivienda se han disparado en los últimos dos años auspiciados por la especulación urbanística y los apartamentos turísticos, reduciendo la oferta para los/as valencianos/as. La gentrificación y la falta de medidas políticas por parte de los gobiernos de Catalá y Mazón aumentan los desahucios, afectando a jóvenes y familias de ingresos medios y bajos. #QueNoTeTiren'
     },

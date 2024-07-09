@@ -5,7 +5,7 @@
       <p>
         <strong>#QueNoTeTiren</strong>
         {{ $t('footer.campaign_by') }}
-        <strong>Compromís València</strong>.
+        <strong>Compromís</strong>.
       </p>
       <a href="mailto:quenotetiren@compromis.net">quenotetiren@compromis.net</a>
       <a href="https://compromis.net">{{ $t('global.privacy_policy') }}</a>

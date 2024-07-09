@@ -2,7 +2,7 @@
 const content = {
   val: [
     {
-      title: 'Falta de vivenda pública ',
+      title: 'Falta de vivenda pública',
       icon: '',
       text: 'València disposa d’un dels parcs de vivenda pública més reduïts d’Espanya, les vora 900 vivendes públiques noves impulsades en l’etapa del govern de Joan Ribó són clarament insuficients davant la greu crisi d’habitatge que patim.'
     },
