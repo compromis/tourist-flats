@@ -14,25 +14,26 @@ const data = [
   { month: 'Mar 2024', number: 1200, currency: '1.100€' },
   { month: 'Abr 2024', number: 1350, currency: '1.200€' },
   { month: 'Maig 2024', number: 1400, currency: '1.400€' },
+  { month: 'Juny 2024', number: 1500, currency: '1.500€' },
+  { month: 'Juliol 2024', number: 1600, currency: '1.600€' },
 ]
 
 const currentIndex = ref(0)
 const currentPoint = computed(() => data[currentIndex.value])
 const chartWidth = computed(() => {
-  const minPrice = 600
+  const minPrice = 400
   const maxPrice = data[data.length - 1].number
   return (currentPoint.value.number - minPrice) * 100 / (maxPrice - minPrice)
 })
 
-let timeout
-let interval = 1300
+let interval = 1000
 function startAnimation () {
-  timeout = setTimeout(() => {
+  setTimeout(() => {
     const totalPoints = data.length
 
     if (currentIndex.value < totalPoints - 1) {
       currentIndex.value++
-      interval -= 110
+      interval -= 80
       startAnimation()
     } else {
       blinking.value = true
