@@ -22,7 +22,8 @@ export default {
     problem: 'El problema',
     causes: 'Las causas',
     solution: 'La solución',
-    cta: 'Denunciar'
+    cta: 'Denunciar',
+    sign: 'Firma',
   },
   map: {
     header: 'Denunciemos ilegalidades',

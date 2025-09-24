@@ -22,7 +22,8 @@ export default {
     problem: 'El problema',
     causes: 'Les causes',
     solution: 'La solució',
-    cta: 'Denúncia'
+    cta: 'Denúncia',
+    sign: 'Signa',
   },
   map: {
     header: 'Denunciem il·legalitats',

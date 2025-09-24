@@ -6,6 +6,7 @@ const cities = useState('cities')
 const city = useState('city')
 
 const tabs = [
+  { id: 'sign', label: t('tabs.sign'), content: resolveComponent('TabsSign') },
   { id: 'problema', label: t('tabs.problem'), content: resolveComponent('TabsProblem') },
   { id: 'causes', label: t('tabs.causes'), content: resolveComponent('TabsCauses') },
   { id: 'solucio', label: t('tabs.solution'), content: resolveComponent('TabsSolution') },
