@@ -5,12 +5,19 @@ const { t } = useI18n()
 const cities = useState('cities')
 const city = useState('city')
 
-const tabs = [
-  { id: 'sign', label: t('tabs.sign'), content: resolveComponent('TabsSign') },
-  { id: 'problema', label: t('tabs.problem'), content: resolveComponent('TabsProblem') },
-  { id: 'causes', label: t('tabs.causes'), content: resolveComponent('TabsCauses') },
-  { id: 'solucio', label: t('tabs.solution'), content: resolveComponent('TabsSolution') },
-]
+const tabs = computed(() => {
+  const baseTabs = [
+    { id: 'problema', label: t('tabs.problem'), content: resolveComponent('TabsProblem') },
+    { id: 'causes', label: t('tabs.causes'), content: resolveComponent('TabsCauses') },
+    { id: 'solucio', label: t('tabs.solution'), content: resolveComponent('TabsSolution') },
+  ]
+
+  if (city.value.id === 1) {
+    baseTabs.unshift({ id: 'sign', label: t('tabs.sign'), content: resolveComponent('TabsSign') })
+  }
+
+  return baseTabs
+})
 
 const { open, close } = useModal({
   component: resolveComponent('ModalsForm'),
