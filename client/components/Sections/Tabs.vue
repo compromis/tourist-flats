@@ -13,7 +13,7 @@ const tabs = computed(() => {
   ]
 
   if (city.value.id === 1) {
-    baseTabs.unshift({ id: 'sign', label: t('tabs.sign'), content: resolveComponent('TabsSign') })
+    baseTabs.unshift({ id: 'sign', label: t('tabs.sign'), content: resolveComponent('TabsSign'), bold: true })
   }
 
   return baseTabs

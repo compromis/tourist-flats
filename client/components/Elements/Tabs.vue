@@ -58,14 +58,14 @@ function handleTabKeydown (e) {
           :id="`tab-${tab.id}`"
           type="button"
           role="tab"
-          class="tab-button"
+          :class="['tab-button', { 'bolder': tab.bold }]"
           :aria-selected="selectedTab === tab.id ? 'true' : 'false'"
           :aria-controls="`tab-panel-${tab.id}`"
           :tabindex="selectedTab === tab.id ? null : '-1'"
           @click="selectedTab = tab.id"
           @keydown="handleTabKeydown"
         >
-          {{ tab.label }}
+          <span>{{ tab.label }}</span>
         </button>
       </div>
     </div>
@@ -143,6 +143,11 @@ function handleTabKeydown (e) {
         background: var(--white);
         z-index: 20;
       }
+    }
+
+    &.bolder[aria-selected='true'] span {
+      display: block;
+      scale: 1.4;
     }
 
     &:first-child {
