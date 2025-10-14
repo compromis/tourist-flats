@@ -12,11 +12,24 @@ const tabs = computed(() => {
     { id: 'solucio', label: t('tabs.solution'), content: resolveComponent('TabsSolution') },
   ]
 
-  if (city.value.id === 1) {
-    baseTabs.unshift({ id: 'sign', label: t('tabs.sign'), content: resolveComponent('TabsSign'), bold: true })
+  const tabsByCity = {
+    1: [
+      { id: 'sign', label: t('tabs.sign'), content: resolveComponent('TabsSign'), bold: true },
+      ...baseTabs
+    ],
+    3: [
+      { id: 'problema', label: t('tabs.problem'), content: resolveComponent('TabsCastelloProblem') },
+      { id: 'causes', label: t('tabs.causes'), content: resolveComponent('TabsCastelloCauses') },
+      { id: 'solucio', label: t('tabs.solution'), content: resolveComponent('TabsCastelloSolution') }
+    ],
+    4: [
+      { id: 'problema', label: t('tabs.problem'), content: resolveComponent('TabsElxProblem') },
+      { id: 'causes', label: t('tabs.causes'), content: resolveComponent('TabsElxCauses') },
+      { id: 'solucio', label: t('tabs.solution'), content: resolveComponent('TabsElxSolution') }
+    ],
   }
 
-  return baseTabs
+  return tabsByCity[city.value.id] || baseTabs
 })
 
 const { open, close } = useModal({

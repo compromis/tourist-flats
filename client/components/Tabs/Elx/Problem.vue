@@ -4,12 +4,12 @@ const content = {
     {
       title: 'Augment del preu vivenda',
       icon: 'lucide:line-chart',
-      text: 'A València, els preus de la vivenda s’han disparat en els últims dos anys afavorits per l’especulació urbanística i els apartaments turístics, reduint l’oferta per als valencians/nes.  La gentrificació i la manca de mesures polítiques per part dels governs de Catalá i  Mazón augmenten els desnonaments, afectant a joves i famílies d’ingressos mitjans i baixos. #QueNoTeTiren'
+      text: 'A Elx,  els preus de la vivenda s’han disparat en els últims dos anys afavorits per l’especulació urbanística, la falta de vivenda pública i l’augment dels apartaments turístics, reduint l’oferta per als il•licitans/nes. La gentrificació i la manca de mesures polítiques per part dels governs de Ruz i Mazón  afecten a joves i famílies d’ingressos mitjans i baixos. #QueNoTeTiren'
     },
     {
       title: 'Expulsió dels barris i substitució de veïnat per turistes',
       icon: 'lucide:camera',
-      text: 'El fet que la majoria de vivenda disponible es destine al lloguer turístic ha reduït l’oferta dels pisos de lloguer de llarga estada, provocant un augment de preus exponencial mai vist a la nostra ciutat. Actualment, els preus de lloguer de llarga estada a València estan al nivell dels de París. Tot açò està provocant l’expulsió massiva de veïns i veïnes als nostres barris, que estan deixant de ser barris per convertir-se en magatzems de turistes. #QueNoTeTiren'
+      text: 'El fet que la majoria de vivenda disponible es destine a pisos turístics i d’estudiants ha reduït l’oferta dels pisos de lloguer de llarga estada, provocant un augment de preus exponencial mai vist a la nostra ciutat. La transformació de les vivendes i locals en conjunts d’infravivendes està provocant l’expulsió de veïns i veïnes als nostres barris i pedanies, que estan deixant de ser barris on viure i convertint-se en llocs de pas  #QueNoTeTiren'
     },
     {
       title: 'Problema per a la joventut',

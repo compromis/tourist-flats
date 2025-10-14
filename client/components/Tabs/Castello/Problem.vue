@@ -4,12 +4,12 @@ const content = {
     {
       title: 'Augment del preu vivenda',
       icon: 'lucide:line-chart',
-      text: 'A València, els preus de la vivenda s’han disparat en els últims dos anys afavorits per l’especulació urbanística i els apartaments turístics, reduint l’oferta per als valencians/nes.  La gentrificació i la manca de mesures polítiques per part dels governs de Catalá i  Mazón augmenten els desnonaments, afectant a joves i famílies d’ingressos mitjans i baixos. #QueNoTeTiren'
+      text: 'A Castelló de la Plana, el preu del lloguer ha pujat de manera alarmant en els darrers anys, fins al punt de registrar una de les majors pujades interanuals del lloguer de tot l’Estat, amb increments que superen el 25 % en 2025. Aquesta escalada ha convertit Castelló en una ciutat on cada vegada és més difícil accedir a un habitatge digne. Els lloguers al centre, al Grau i a zones properes a la Universitat Jaume I són pràcticament inassumibles per a gran part de la població. L’especulació urbanística, la falta de vivenda pública i la proliferació d’apartaments turístics redueixen encara més l’oferta de lloguer de llarga durada. Tot això passa mentre el govern de Begoña Carrasco i de Mazón continua sense actuar, deixant que el mercat i els grans propietaris marquen el preu del dret a viure a la ciutat. #QueNoTeTiren'
     },
     {
       title: 'Expulsió dels barris i substitució de veïnat per turistes',
       icon: 'lucide:camera',
-      text: 'El fet que la majoria de vivenda disponible es destine al lloguer turístic ha reduït l’oferta dels pisos de lloguer de llarga estada, provocant un augment de preus exponencial mai vist a la nostra ciutat. Actualment, els preus de lloguer de llarga estada a València estan al nivell dels de París. Tot açò està provocant l’expulsió massiva de veïns i veïnes als nostres barris, que estan deixant de ser barris per convertir-se en magatzems de turistes. #QueNoTeTiren'
+      text: 'Les conseqüències d’aquest increment descontrolat del lloguer ja són visibles a tota la ciutat. Famílies que vivien al centre o a barris com Rafalafena, el Raval Universitari o el Grau s’han vist obligades a marxar. L’augment dels preus i la reducció del parc d’habitatge disponible estan provocant un desplaçament del veïnat de tota la vida, que veu com el seu barri es buida i es transforma per donar cabuda a pisos turístics o lloguers de curta durada destinats a visitants. Els estudiants de la Universitat Jaume I també pateixen aquesta situació: cada vegada és més difícil trobar una habitació assequible prop del campus, i molts acaben compartint pisos massificats o residint fora de Castelló per poder estudiar.Aquesta realitat no sols afecta l’accés a la vivenda, sinó també el teixit social i la vida de barri, posant en risc el model de ciutat acollidora i equilibrada que Castelló sempre havia representat. #QueNoTeTiren'
     },
     {
       title: 'Problema per a la joventut',

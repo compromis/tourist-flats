@@ -4,7 +4,7 @@ const content = {
     {
       title: 'Augment del preu vivenda',
       icon: 'lucide:line-chart',
-      text: 'A València, els preus de la vivenda s’han disparat en els últims dos anys afavorits per l’especulació urbanística i els apartaments turístics, reduint l’oferta per als valencians/nes.  La gentrificació i la manca de mesures polítiques per part dels governs de Catalá i  Mazón augmenten els desnonaments, afectant a joves i famílies d’ingressos mitjans i baixos. #QueNoTeTiren'
+      text: 'A València, els preus de la vivenda s’han disparat en els últims dos anys afavorits per l’especulació urbanística i els apartaments turístics, reduint l’oferta per als valencians/nes.  La gentrificació i la manca de mesures polítiques per part dels governs de Catalá i  Mazón augmenten els desnonaments, afectant a joves i famílies d’ingressos mitjans i baixos. #QueNoTeTire'
     },
     {
       title: 'Expulsió dels barris i substitució de veïnat per turistes',
