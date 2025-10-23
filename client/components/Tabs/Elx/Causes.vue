@@ -26,22 +26,22 @@ const content = {
     {
       title: 'Falta de vivienda pública',
       icon: '',
-      text: 'València dispone de uno de los parques de vivienda pública más reducidos de España, las cerca de 900 viviendas públicas nuevas impulsadas en la etapa de gobierno de Joan Ribó son claramente insuficientes ante la grave crisis habitacional que sufrimos.'
+      text: 'Elx necesita disponer aumentar su parque de vivienda pública más ancho, la oferta de vivienda asequible es claramente insuficiente ante la grave crisis de vivienda que padecemos.'
     },
     {
       title: 'Apartamentos turísticos',
       icon: '',
-      text: 'La proliferación de apartamentos turísticos en Valencia ha reducido la oferta de vivienda para los residentes locales, elevando los precios del alquiler. La competencia con el sector turístico hace que encontrar vivienda asequible sea cada vez más difícil.'
+      text: 'La proliferación de apartamentos turísticos en Elx reduce la oferta de vivienda para los residentes locales, elevando los precios del alquiler. La competencia con el sector turístico hace que encontrar vivienda asequible sea cada vez más difícil.'
     },
     {
       title: 'Especulación urbanística',
       icon: '',
-      text: 'La especulación urbanística e inmobiliaria en Valencia impulsa los precios del alquiler, dificultando el acceso a la vivienda para los residentes locales. El interés de inversores eleva los costos, generando una crisis habitacional en la ciudad.'
+      text: 'La especulación urbanística e inmobiliaria en Elx impulsa los precios del alquiler, dificultando el acceso a la vivienda para los residentes locales. El interés de los inversores eleva los costes, generando una crisis de vivienda en los barrios y pedanías.'
     },
     {
       title: 'Grandes tenedores y fondos buitre',
       icon: '',
-      text: 'En Valencia, la presencia de grandes tenedores de vivienda y fondos buitre ha generado un impacto significativo en el mercado de alquiler. Su enfoque en obtener beneficios ha llevado a un aumento desproporcionado en los precios, lo que dificulta aún más que los residentes accedan a viviendas asequibles, exacerbando la crisis habitacional.'
+      text: 'En Elx, la presencia de grandes tenedores de vivienda y de los fondos buitre empieza a tener un impacto significativo en el mercado de alquiler. Su punto de vista centrado en obtener beneficios provoca un aumento desproporcionado de los precios, lo que dificulta más y más que los residentes puedan acceder a viviendas asequibles, exacerbando la crisis de vivienda.'
     }
   ]
 }

@@ -31,19 +31,19 @@ const content = {
       title: 'Construcción de Vivienda Pública',
       number: 1,
       icon: '',
-      text: 'En Compromis apostamos por la construcción de 20.000 nuevas viviendas públicas en València para ofrecer soluciones asequibles, mejorar el acceso a la vivienda y competir con el parque de vivienda privada a precios más competitivos, fomentando el descenso del precio de la vivienda de cualquier tipología.'
+      text: 'En Compromís apostamos por la construcción de 2.000 nuevas viviendas públicas en Elx para ofrecer soluciones asequibles, mejorar el acceso a la vivienda y competir con el parque de vivienda privado a precios más competitivos, fomentando la bajada del precio de la vivienda de cualquier tipología.'
     },
     {
       title: 'Reforma legal',
       number: 2,
       icon: '',
-      text: 'Promovemos cambios significativos en la Ley de Uso Social de la Vivienda, en la Ley de Ordenación del Territorio y Urbanismo y en als ordenanzas municipales para revertir a mínimos la implantación de apartamentos turísticos en los barrios de la ciudad y en los edificios de uso residencial. La vivienda para las personas, no para los especuladores.'
+      text: 'Promovemos cambios significativos en la Ley de Uso Social de la Vivienda, en la Ley de Ordenación del Territorio y Urbanismo y en las ordenanzas municipales para revertir a mínimos la implantación de apartamentos de uso turísticos en los barrios y pedanías del municipio y en los edificios de uso residenciales. La vivienda para las personas, no para los especuladores.'
     },
     {
       title: 'Ciudad tensionada',
       number: 3,
       icon: '',
-      text: 'Proponemos la declaración de València como ciudad tensionada por el precio del alquiler para regular el mercado, limitar los precios del alquiler y proteger a los inquilinos de los precios abusivos fruto de la especulación.'
+      text: 'Proponemos la declaración de Elx como ciudad tensionada por el precio del alquiler para regular el mercado, limitar los precios del alquiler y proteger a los inquilinos de precios abusivos fruto de la especulación.'
     },
     {
       title: 'Cierra tu edificio a los apartamentos turísticos',
