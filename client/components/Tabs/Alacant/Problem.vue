@@ -4,22 +4,22 @@ const content = {
     {
       title: 'Augment del preu vivenda',
       icon: 'lucide:line-chart',
-      text: 'A València, els preus de la vivenda s’han disparat en els últims dos anys afavorits per l’especulació urbanística i els apartaments turístics, reduint l’oferta per als valencians/nes.  La gentrificació i la manca de mesures polítiques per part dels governs de Catalá i  Mazón augmenten els desnonaments, afectant a joves i famílies d’ingressos mitjans i baixos. #QueNoTeTire'
+      text: 'A Alacant, els preus de la vivenda s’han disparat un 70% els últims 5 anys, més del 10% en l’últim any i el preu de compra un 13%. L’especulació urbanística i la turistificació, situa Alacant en el rècord de no poder adquirir cases per a viure i en rècord de no fer res per pal·liar este problema per part de les administracions públiques.'
     },
     {
       title: 'Expulsió dels barris i substitució de veïnat per turistes',
       icon: 'lucide:camera',
-      text: 'El fet que la majoria de vivenda disponible es destine al lloguer turístic ha reduït l’oferta dels pisos de lloguer de llarga estada, provocant un augment de preus exponencial mai vist a la nostra ciutat. Actualment, els preus de lloguer de llarga estada a València estan al nivell dels de París. Tot açò està provocant l’expulsió massiva de veïns i veïnes als nostres barris, que estan deixant de ser barris per convertir-se en magatzems de turistes. #QueNoTeTiren'
+      text: 'L’alcalde Luis Barcala y el president Carlos Mazón no volen declarar la ciutat tensionada per a poder regular els preus ni tampoc fan res amb la proliferació dels apartaments turístics, rècord en esta ciutat i també d’apartaments turístics il·legals. A més, Alacant s’ha convertit en una de les ciutats amb més segones vivendes que sols s’usen en vacances (82.000 el 27% de les totals). Una xifra a la qual s\'hauria de sumar les que són propietat d’entitats bancàries o fons voltor. #QueNoTeTiren'
     },
     {
       title: 'Problema per a la joventut',
       icon: '',
-      text: 'El País Valencià és un dels països d’Europa on les persones joves més tard s’emancipen de casa dels seus pares (a partir dels 30 anys), per damunt inclús de la mitjana espanyola. Al problema de l’atur juvenil s’hi suma la incapacitat de trobar una vivenda, obligant a joves i famílies a compartir habitacions en condicions de precarietat. #QueNoTeTiren'
+      text: 'El País Valencià és un dels països d’Europa on les persones joves més tard s’emancipen de casa dels seus pares (a partir dels 30 anys), per damunt inclús de la mitjana espanyola. Al problema de l’atur juvenil s’hi suma la incapacitat de trobar una vivenda, obligant joves i famílies a compartir habitacions en condicions de precarietat. #QueNoTeTiren'
     },
     {
       title: 'Problema per a les famílies',
       icon: '',
-      text: 'L’augment del preu de la vivenda junt al d’altres bens i serveis de primera necessitat degut a la inflació fa que moltes famílies, inclús amb dos i tres sous, no siguen capaços d’arribar a final de mes. L’augment de preu d’hipoteques i lloguers està col·locant de nou a moltes famílies en situació de desnonament i expulsió #QueNoTeTiren'
+      text: 'L’augment del preu de la vivenda al costat del d’altres béns i serveis de primera necessitat a causa de la inflació fa que moltes famílies, inclús amb dos i tres sous, no siguen capaços d’arribar a final de mes. L’augment de preu d’hipoteques i lloguers està col·locant de nou a moltes famílies en situació de desnonament i expulsió. A Alacant 5.552 famílies estan en llista d’espera per accedir a una vivenda pública, un 23% més que fa un any i mig. #QueNoTeTiren'
     },
     {
       title: 'Problema per a la gent gran',
@@ -31,27 +31,27 @@ const content = {
     {
       title: 'Aumento del precio de la vivienda',
       icon: '',
-      text: 'En València, los precios de la vivienda se han disparado en los últimos dos años auspiciados por la especulación urbanística y los apartamentos turísticos, reduciendo la oferta para los/as valencianos/as. La gentrificación y la falta de medidas políticas por parte de los gobiernos de Catalá y Mazón aumentan los desahucios, afectando a jóvenes y familias de ingresos medios y bajos. #QueNoTeTiren'
+      text: 'En Alicante, los precios de la vivienda se dispararon un 70% en los últimos 5 años, más del 10% en el último año y el precio de compra un 13%. La especulación urbanística y la turistificación, sitúa a Alicante en el récord de no poder adquirir casas para vivir y en récord de no hacer nada por paliar este problema por parte de las administraciones públicas. #QueNoTeTiren'
     },
     {
       title: 'Expulsión de los Barrios y sustitución de vecinos/as por turistas',
       icon: '',
-      text: 'El hecho de que la mayoría de vivienda disponible se destine al alquilar turístico ha reducido la oferta de los pisos de alquiler de larga duración, provocando un aumento de precios exponencial nunca visto en nuestra ciudad. Actualmente, los precios del alquiler de larga duración en València están al nivel de los de París. Todo esto está provocando la expulsión masiva de vecinos y vecinas de nuestros barrios, que están dejando de ser barrios para convertirse en almacenes de turistas. #QueNoTeTiren'
+      text: 'El alcalde Luis Barcala y el presidente Carlos Mazón no quieren declarar a la ciudad tensionada para poder regular los precios ni tampoco hacen nada con la proliferación de los apartamentos turísticos, récord en esta ciudad y también de apartamentos turísticos ilegales. Además, Alicante se ha convertido en una de las ciudades con más segundas viviendas que sólo se usan en vacaciones (82.000 el 27% de las totales). Una cifra a la que debería sumarse las que son propiedad de entidades bancarias o fondos buitre. #QueNoTeTiren'
     },
     {
       title: 'Problema para la juventud',
       icon: '',
-      text: 'El País Valencià es uno de los paises de Europa donde las personas jóvenes más tarde se emancipan de casa de sus padres (a partir de los 30 años), por encima incluso de la media española. Al problema del paro juvenil se suma la incapacidad de encontrar una vivienda, obligando a jóvenes y familias a compartir habitaciones en condiciones de precariedad. #QueNoTeTiren'
+      text: 'El País Valencià es uno de los países de Europa donde las personas jóvenes más tarde se emancipan de casa de sus padres (a partir de los 30 años), por encima incluso de la media española. Al problema del paro juvenil se suma la incapacidad de encontrar una vivienda, obligando a jóvenes y familias a compartir habitaciones en condiciones de precariedad. #QueNoTeTiren'
     },
     {
       title: 'Problema para las familias',
       icon: '',
-      text: 'El aumento del precio de la vivienda junto al de otros bienes y servicios de primera necesidad debido a la inflación hace que muchas familias, incluso con dos y tres sueldos, no sean capaces de llegar a final de mes. El aumento de precio de hipotecas y alquileres está colocando nuevamente a muchas familias en situación de desahucio y expulsión #QueNoTeTiren'
+      text: 'El aumento del precio de la vivienda junto al de otros bienes y servicios de primera necesidad debido a la inflación hace que muchas familias, incluso con dos y tres sueldos, no sean capaces de llegar a fin de mes. El aumento de precio de hipotecas y alquileres está colocando de nuevo a muchas familias en situación de desahucio y expulsión. En Alicante, 5.552 familias están en lista de espera para acceder a una vivienda pública, un 23% más que hace año y medio. #QueNoTeTiren'
     },
     {
       title: 'Problema ara la gente mayor',
       icon: '',
-      text: 'Las personas mayores están especialmente desprotegidas ante la especulación con la vivienda y las actuaciones de muchos fondos de inversión para quedarse con edificios de renta antigua donde viven personas de la tercera edad. #QueNoTeTiren'
+      text: 'Las personas mayores están especialmente desprotegidas ante la especulación con la vivienda y las actuaciones de muchos fondos de inversión para quedarse con edificios de renta antigua en los que viven personas de la tercera edad. #QueNoTeTiren'
     }
   ]
 }
