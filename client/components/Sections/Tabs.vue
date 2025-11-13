@@ -17,6 +17,11 @@ const tabs = computed(() => {
       { id: 'sign', label: t('tabs.sign'), content: resolveComponent('TabsSign'), bold: true },
       ...baseTabs
     ],
+    2: [
+      { id: 'problema', label: t('tabs.problem'), content: resolveComponent('TabsAlacantProblem') },
+      { id: 'causes', label: t('tabs.causes'), content: resolveComponent('TabsAlacantCauses') },
+      { id: 'solucio', label: t('tabs.solution'), content: resolveComponent('TabsAlacantSolution') }
+    ],
     3: [
       { id: 'problema', label: t('tabs.problem'), content: resolveComponent('TabsCastelloProblem') },
       { id: 'causes', label: t('tabs.causes'), content: resolveComponent('TabsCastelloCauses') },
