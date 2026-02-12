@@ -15,7 +15,7 @@ const data = [
   { month: 'Abr 2024', number: 1350, currency: '1.200€' },
   { month: 'Maig 2024', number: 1400, currency: '1.400€' },
   { month: 'Juny 2024', number: 1500, currency: '1.500€' },
-  { month: 'Juliol 2024', number: 1600, currency: '1.600€' },
+  { month: 'Febrer 2026', number: 1600, currency: '1.600€' },
 ]
 
 const currentIndex = ref(0)

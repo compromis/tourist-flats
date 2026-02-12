@@ -50,6 +50,11 @@ const { open, close } = useModal({
 
 <template>
   <section>
+    <div v-if="city.id === 1" class="doc">
+      <a href="/docs/APT_PRESSUMPTAMENT_TANCANTS.pdf" target="_blank" data-umami-event="cta_download_report">
+        <Icon name="ri:file-3-line" /> Descarrega els 1.000 apartaments turístics que Catalá diu "haver tancat"
+      </a>
+    </div>
     <div class="container padded">
       <ElementsTabs
         :tabs="tabs"
@@ -74,6 +79,23 @@ const { open, close } = useModal({
 
 .button {
   font-size: 1.1rem;
+}
+
+.doc {
+  text-align: center;
+  padding: 1rem;
+
+  a {
+    color: var(--color-white);
+    font-weight: 900;
+    font-size: 1.35rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    &:hover { text-decoration: underline; }
+  }
 }
 
 @include media('<md') {
